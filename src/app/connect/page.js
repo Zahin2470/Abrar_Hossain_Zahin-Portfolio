@@ -34,7 +34,7 @@ export default function Connect() {
           className="bg-gradient-to-br from-purple-900/40 to-blue-900/40 border border-purple-500/30 rounded-3xl p-12">
           <h2 className="text-3xl font-bold mb-4">Let&apos;s work together</h2>
           <p className="text-zinc-400 mb-8">
-            Whether it&apos;s a research collaboration, ML project, or just a conversation about AI &mdash; I&apos;d love to hear from you.
+            Whether it&apos;s a research collaboration, ML project, or just a conversation about AI &; I&apos;d love to hear from you.
           </p>
           <a href={`mailto:${siteConfig.email}`}
             className="inline-block px-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-full font-medium transition-colors text-lg">

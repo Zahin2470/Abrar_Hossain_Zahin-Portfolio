@@ -27,7 +27,7 @@ export default function About() {
             { label: "🎓 University",  value: siteConfig.university },
             { label: "📚 Degree",      value: siteConfig.degree },
             { label: "📍 Location",    value: siteConfig.location },
-            { label: "🔬 Focus",       value: "ML · Deep Learning · NLP · Computer Vision · XAI" },
+            { label: "🔬 Focus",       value: "ML | DL | NLP | Computer Vision | XAI" },
             { label: "📧 Email",       value: siteConfig.email },
             { label: "📄 Resume",      value: "Available on request", link: siteConfig.resumeUrl },
           ].map((item) => (

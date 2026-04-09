@@ -9,23 +9,24 @@ export const siteConfig = {
   tagline: "Turning data into intelligence, one model at a time.",
   bio: "I am a passionate Data Analyst and AI/ML enthusiast currently pursuing B.Sc. in Computer Science and Engineering at East West University. I enjoy building intelligent systems that solve real-world problems, especially in healthcare, environment, and education.",
   bioLong: "B.Sc. Computer Science and Engineering Student at East West University, Dhaka. Passionate about Machine Learning, Deep Learning, NLP, LLMs & Computer Vision.",
-  email: "your.email@example.com",
-  resumeUrl: "/resume.pdf",
+  email: "abrarhossain1200@gmail.com",
+  resumeUrl: "/dummy.pdf",
   university: "East West University, Dhaka",
   degree: "B.Sc. Computer Science and Engineering",
   location: "Dhaka, Bangladesh",
 };
 
 export const socialLinks = [
-  { label: "LinkedIn",       url: "https://linkedin.com/in/md-abrar-hossain-zahin",         icon: "linkedin" },
+  { label: "LinkedIn",       url: "https://linkedin.com/in/md-abrar-hossain-zahin",          icon: "linkedin" },
   { label: "GitHub",         url: "https://github.com/Zahin2470",                            icon: "github" },
   { label: "Kaggle",         url: "https://kaggle.com/mdabrarhossainzahin",                  icon: "kaggle" },
   { label: "Facebook",       url: "https://facebook.com/AbrarHossainZahin",                  icon: "facebook" },
   { label: "ResearchGate",   url: "https://researchgate.net/profile/Abrar-Zahin-7",          icon: "researchgate" },
-  { label: "Google Scholar", url: "https://scholar.google.com/citations?user=PggflFIAAAAJ", icon: "scholar" },
-  { label: "LeetCode",       url: "https://leetcode.com/u/MdZahin",                         icon: "leetcode" },
-  { label: "CodeForces",     url: "https://codeforces.com/profile/MD.Zahin",                icon: "codeforces" },
-  { label: "YouTube",        url: "https://www.youtube.com/@Abrar_Hossain_Zahin",           icon: "youtube" },
+  { label: "Google Scholar", url: "https://scholar.google.com/citations?user=PggflFIAAAAJ",  icon: "scholar" },
+  { label: "LeetCode",       url: "https://leetcode.com/u/MdZahin",                          icon: "leetcode" },
+  { label: "CodeForces",     url: "https://codeforces.com/profile/MD.Zahin",                 icon: "codeforces" },
+  { label: "YouTube",        url: "https://www.youtube.com/@Abrar_Hossain_Zahin",            icon: "youtube" },
+  { label: "Freelance",       url: "https://www.my.freelancer.com/u/mdzahin2022",            icon: "freelance" },
 ];
 
 export const skills = [
@@ -181,7 +182,7 @@ export const education = [
     degree: "B.Sc. Computer Science and Engineering",
     institution: "East West University",
     location: "Dhaka, Bangladesh",
-    period: "2021 – Present",
+    period: "2022 – Present",
     description: "Focusing on AI, Machine Learning, and Software Engineering. Active researcher in medical imaging and green AI.",
   },
 ];

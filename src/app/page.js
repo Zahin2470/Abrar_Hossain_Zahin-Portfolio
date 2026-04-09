@@ -10,8 +10,8 @@ export default function Home() {
     <div className="bg-zinc-950 text-white min-h-screen">
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-blue-900/30 z-0" />
+      <section className="relative min-h-screen flex items-center justify-center pt-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/50 via-black to-blue-900/30 z-0" />
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,9 +34,11 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             */}
-            <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-5xl font-bold">
-              AZ
-            </div>
+            <img
+              src="/images/profile/developer-pic-1.png"
+              alt="Abrar Hossain Zahin"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
           <motion.h1
@@ -66,24 +68,11 @@ export default function Home() {
             {siteConfig.bioLong}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05 }}
-            className="mt-10 flex flex-wrap justify-center gap-4"
-          >
-            <Link href="/projects" className="px-8 py-3 rounded-full bg-purple-600 hover:bg-purple-500 transition-colors font-medium">
-              View Projects →
-            </Link>
-            <Link href="/about" className="px-8 py-3 rounded-full border border-zinc-700 hover:border-purple-500 hover:text-purple-400 transition-all font-medium">
-              About Me
-            </Link>
-          </motion.div>
         </motion.div>
       </section>
 
       {/* About preview */}
-      <section className="py-24 border-t border-zinc-900">
+      <section className="py-6 border-t border-zinc-900">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
