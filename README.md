@@ -59,28 +59,28 @@ I enjoy turning complex challenges into impactful solutions — especially in he
 
 ---
 
-<<<<<<< HEAD
 ### Project Structure
 
-portfolio/
-├── package.json             
-├── next.config.js       
-├── tailwind.config.js     
-├── postcss.config.js  
-└── src/
-    ├── app/
-    │   ├── globals.css       
-    │   ├── layout.js      
-    │   ├── page.js           
-    │   ├── about/page.js    
-    │   ├── projects/page.js  ✅
-    │   └── research/page.js  
-    ├── components/
-    │   ├── Navbar.js       
-    │   ├── Footer.js     
-    │   └── AnimatedText.js   
-    └── lib/
-        └── data.js   
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles + CSS variables
+│   ├── layout.js            # Root layout with dark mode + Navbar/Footer
+│   ├── page.js              # Home page (Hero, Stats, Featured Projects, CTA)
+│   ├── not-found.js         # 404 page
+│   ├── about/page.js        # About page (Bio, Education, Skills)
+│   ├── projects/page.js     # Projects page (filterable grid)
+│   └── research/page.js     # Research page (paper cards)
+├── components/
+│   ├── Navbar.js            # Sticky navbar with dark toggle + mobile menu
+│   ├── Footer.js            # Footer with social icons
+│   ├── AnimatedText.js      # Word-by-word text reveal animation
+│   ├── ProjectCard.js       # Reusable project card
+│   ├── ScrollToTop.js       # Floating scroll-to-top button
+│   └── PageTransition.js    # Page fade transition wrapper
+└── lib/
+    └── data.js              # ⭐ ALL CONTENT LIVES HERE — edit this file!
+```
 
 ---
 
@@ -114,6 +114,3 @@ Open [http://localhost:3000](http://localhost:3000)
 ---
 
 Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
-=======
-⭐ Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
->>>>>>> beb197f16148594ec60a805d3329b253cf016b63
