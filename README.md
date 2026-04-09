@@ -59,6 +59,7 @@ I enjoy turning complex challenges into impactful solutions — especially in he
 
 ---
 
+<<<<<<< HEAD
 ### Project Structure
 
 portfolio/
@@ -113,3 +114,6 @@ Open [http://localhost:3000](http://localhost:3000)
 ---
 
 Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
+=======
+⭐ Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
+>>>>>>> beb197f16148594ec60a805d3329b253cf016b63
