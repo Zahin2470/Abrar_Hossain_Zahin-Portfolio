@@ -59,6 +59,8 @@ I enjoy turning complex challenges into impactful solutions — especially in he
 
 ---
 
+### Project Structure
+
 portfolio/
 ├── package.json             
 ├── next.config.js       
@@ -81,4 +83,33 @@ portfolio/
 
 ---
 
-⭐ Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
+### 🛠️ Setup
+
+### 1. Create a new Next.js project
+
+```bash
+npx create-next-app@14 zahin-portfolio
+cd zahin-portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install framer-motion
+```
+
+### 3. Replace the generated files
+
+Copy all files from this zip into your project, replacing everything.
+
+### 4. Run the dev server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+---
+
+Feel free to explore my projects and research. I'm always open to collaboration and new opportunities in AI/ML!
