@@ -118,7 +118,8 @@ function EmailForm() {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
     const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
-    window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`);
+    // Open Gmail compose window instead of default mail client
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.email}&su=${subject}&body=${body}`);
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -136,7 +137,7 @@ function EmailForm() {
           />
         </div>
         <div>
-          <label className="text-xs font-mono text-zinc-500 mb-1.5 block">Your Email</label>
+          <label className="text-xs font-mono text-zinc-500 mb-1.5 block">Your Mail</label>
           <input
             required type="email" value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -167,7 +168,7 @@ function EmailForm() {
           ) : (
             <motion.span key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="flex items-center justify-center gap-2">
-              Send Message ✉️
+              Send via Gmail <span>📧</span>
             </motion.span>
           )}
         </AnimatePresence>
@@ -194,7 +195,7 @@ export default function Connect() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
           className="mb-16">
           <h1 className="font-black leading-none mb-5"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}>
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}>
             <span className="block text-white">Let&apos;s Build</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
               Something Great
@@ -259,12 +260,13 @@ export default function Connect() {
             <p className="text-zinc-500 max-w-lg mx-auto mb-8 text-sm leading-relaxed">
               Whether it&apos;s a ground-breaking ML paper, a side project, or just a chat about the future of AI, my inbox is always open.
             </p>
-            <a href={`mailto:${siteConfig.email}`}
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.email}`}
+              target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/40">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              Say Hello ✉️
+              Gmail Me <span>📧</span>
               <span>→</span>
             </a>
           </div>

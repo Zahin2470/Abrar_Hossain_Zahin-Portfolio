@@ -482,7 +482,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
             <p className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-4">let&apos;s_collaborate</p>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-none"
+            <h2 className="text-2xl md:text-3xl font-black mb-6 leading-none"
               style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
               Open to research<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">

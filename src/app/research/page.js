@@ -181,7 +181,7 @@ export default function Research() {
           </p>
           <h1
             className="font-black leading-none mb-6"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}
           >
             <span className="block text-white">Research &</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
