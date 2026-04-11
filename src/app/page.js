@@ -131,13 +131,10 @@ export default function Home() {
   const skillMarquee = ["Python","TensorFlow","PyTorch","Pandas","OpenCV","Scikit-learn","TypeScript","React","Next.js","Tailwind","Docker","Git","Jupyter","HuggingFace","NumPy","Matplotlib"];
 
   return (
-    <div className="bg-zinc-950 text-white overflow-hidden">
+    <div className="bg-zinc-950 text-white overflow-x-hidden">
 
-      {/* ═══════════════════════════════════════════════════
-          HERO
-      ═══════════════════════════════════════════════════ */}
+      {/* HERO SECTION - Responsive for mobile */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated particle grid */}
         <ParticleGrid />
 
         {/* Radial glow blobs */}
@@ -152,27 +149,75 @@ export default function Home() {
           style={{ backgroundImage: "linear-gradient(to right, #a855f7 1px, transparent 1px), linear-gradient(to bottom, #a855f7 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
         <motion.div style={{ y: heroY, opacity: heroOpacity }}
-          className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-20 grid lg:grid-cols-2 gap-16 items-center">
+          className="relative z-10 w-full max-w-6xl mx-auto px-3 sm:px-6 pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
-          {/* LEFT: text */}
-          <div>
+          {/* On mobile, show image/stats first, then text. On desktop, text left, image right. */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center justify-center relative order-1 lg:order-2 mt-10 lg:mt-0"
+          >
+            {/* Outer rings */}
+            <div className="relative w-56 h-56 xs:w-64 xs:h-64 sm:w-80 sm:h-80">
+              {/* Ring 3 */}
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-3 rounded-full border border-purple-500/15" />
+              {/* Ring 2 */}
+              <motion.div animate={{ rotate: -360 }} transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0 rounded-full border border-fuchsia-500/20"
+                style={{ borderStyle: 'dashed' }}
+              >
+                {/* Orbiting dot */}
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-fuchsia-400 shadow-lg shadow-fuchsia-500/50" />
+              </motion.div>
+              {/* Ring 1 */}
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0 rounded-full border border-purple-500/30"
+              >
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-purple-400 shadow-lg shadow-purple-500/50" />
+              </motion.div>
+
+              {/* Profile circle */}
+              <div className="absolute inset-3 rounded-full bg-gradient-to-br from-purple-600 via-fuchsia-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-purple-900/60">
+                <img src="/images/profile/developer-pic-1.png" alt="Zahin" className="w-full h-full object-cover rounded-full" />
+              </div>
+
+              {/* Floating stat badges - reposition and scale for mobile */}
+              {[
+                { label: "AI Papers", value: "5+",   pos: "top-0 right-0 xs:-right-6",   color: "from-purple-600 to-fuchsia-600" },
+                { label: "Projects",  value: "10+",   pos: "bottom-4 left-0 xs:-left-8", color: "from-blue-600 to-cyan-600" },
+                { label: "EWU CSE",   value: "2022–26", pos: "bottom-0 right-0 xs:-right-16",color: "from-emerald-600 to-teal-600" },
+              ].map((b, i) => (
+                <motion.div key={b.label}
+                  animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
+                  transition={{ duration: 3.5 + i, repeat: Infinity, ease: 'easeInOut' }}
+                  className={`absolute ${b.pos} bg-zinc-900 border border-zinc-700 rounded-2xl px-3 py-2 shadow-xl text-center text-xs xs:text-sm`}
+                >
+                  <p className={`text-base xs:text-lg font-black bg-gradient-to-r ${b.color} bg-clip-text text-transparent`} style={{ fontFamily: "'Syne', sans-serif" }}>{b.value}</p>
+                  <p className="text-xs text-zinc-500">{b.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Text info - order-2 on mobile, order-1 on desktop */}
+          <div className="order-2 lg:order-1">
             {/* Status badge */}
             <motion.div
               initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/40 bg-purple-500/10 text-xs font-medium text-purple-300 mb-8"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/40 bg-purple-500/10 text-xs font-medium text-purple-300 mb-6 sm:mb-8"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Open to research collaborations
             </motion.div>
 
-            {/* Name */}
+            {/* Name - allow wrapping on mobile */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              // Added whitespace-nowrap here to prevent any line breaks
-              className="font-black leading-none mb-3 whitespace-nowrap"
-              style={{ fontSize: "clamp(2.7rem, 3.7vw, 2.7rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}
+              className="font-black leading-none mb-3 break-words text-[2.2rem] xs:text-[2.7rem] sm:text-[2.7rem] md:text-[2.7rem] lg:text-[2.7rem] text-center lg:text-left"
+              style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}
             >
               <span className="text-white">Abrar </span>
               <span className="text-white">Hossain </span>
@@ -184,23 +229,23 @@ export default function Home() {
             {/* Typed role */}
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
-              className="text-xl md:text-2xl font-mono font-light mb-6 h-8"
+              className="text-base xs:text-lg md:text-2xl font-mono font-light mb-6 h-8 text-center lg:text-left"
             >
               <TypedText words={["AI & ML Engineer", "Deep Learning Researcher", "Computer Vision Engineer", "NLP Practitioner", "Green AI Advocate"]} />
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-              className="text-zinc-400 leading-relaxed max-w-lg mb-8"
+              className="text-zinc-400 leading-relaxed max-w-lg mb-8 text-center lg:text-left"
               style={{ fontSize: "0.97rem" }}
             >
-              B.Sc. in CSE student at <span className="text-purple-300 font-medium">East West University, Dhaka, Bangladesh</span> <br></br>Building Intelligent Systems for Healthcare, Environment & Education using ML, DL, NLP & Computer Vision.
+              B.Sc. in CSE student at <span className="text-purple-300 font-medium">East West University, Dhaka, Bangladesh</span> <br />Building Intelligent Systems for Healthcare, Environment & Education using ML, DL, NLP & Computer Vision.
             </motion.p>
 
             {/* CTA row */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
-              className="flex flex-wrap gap-3 mb-10"
+              className="flex flex-wrap gap-3 mb-8 sm:mb-10 justify-center lg:justify-start"
             >
               <a href={siteConfig.resumeUrl} target="_blank" rel="noopener noreferrer"
                 className="group relative px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 font-semibold text-sm hover:text-zinc-300 transition-all duration-200"
@@ -212,7 +257,7 @@ export default function Home() {
             {/* Social row */}
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-              className="flex gap-3 flex-wrap"
+              className="flex gap-3 flex-wrap justify-center lg:justify-start"
             >
               {[
                 { label: "GitHub",   href: "https://github.com/Zahin2470" },
@@ -230,55 +275,6 @@ export default function Home() {
               ))}
             </motion.div>
           </div>
-
-          {/* RIGHT: profile orb + floating stats */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center justify-center relative"
-          >
-            {/* Outer rings */}
-            <div className="relative w-80 h-80">
-              {/* Ring 3 */}
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-3 rounded-full border border-purple-500/15" />
-              {/* Ring 2 */}
-              <motion.div animate={{ rotate: -360 }} transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-fuchsia-500/20"
-                style={{ borderStyle: "dashed" }}
-              >
-                {/* Orbiting dot */}
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-fuchsia-400 shadow-lg shadow-fuchsia-500/50" />
-              </motion.div>
-              {/* Ring 1 */}
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-purple-500/30"
-              >
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-purple-400 shadow-lg shadow-purple-500/50" />
-              </motion.div>
-
-              {/* Profile circle */}
-              <div className="absolute inset-3 rounded-full bg-gradient-to-br from-purple-600 via-fuchsia-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-purple-900/60">
-                <img src="/images/profile/developer-pic-1.png" alt="Zahin" className="w-full h-full object-cover rounded-full" />
-              </div>
-
-              {/* Floating stat badges */}
-              {[
-                { label: "AI Papers", value: "5+",   pos: "top-0 -right-6",   color: "from-purple-600 to-fuchsia-600" },
-                { label: "Projects",  value: "10+",   pos: "bottom-4 -left-8", color: "from-blue-600 to-cyan-600" },
-                { label: "EWU CSE",   value: "2022–26", pos: "bottom-0 -right-16",color: "from-emerald-600 to-teal-600" },
-              ].map((b, i) => (
-                <motion.div key={b.label}
-                  animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
-                  transition={{ duration: 3.5 + i, repeat: Infinity, ease: "easeInOut" }}
-                  className={`absolute ${b.pos} bg-zinc-900 border border-zinc-700 rounded-2xl px-4 py-2.5 shadow-xl`}
-                >
-                  <p className={`text-lg font-black bg-gradient-to-r ${b.color} bg-clip-text text-transparent`} style={{ fontFamily: "'Syne', sans-serif" }}>{b.value}</p>
-                  <p className="text-xs text-zinc-500">{b.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
 
         {/* Scroll hint */}
