@@ -219,11 +219,13 @@ export default function Home() {
               className="font-black leading-none mb-3 break-words text-[2.2rem] xs:text-[2.7rem] sm:text-[2.7rem] md:text-[2.7rem] lg:text-[2.7rem] text-center lg:text-left"
               style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}
             >
+            <div className="whitespace-nowrap">
               <span className="text-white">Abrar </span>
               <span className="text-white">Hossain </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
                 Zahin
               </span>
+            </div>
             </motion.h1>
 
             {/* Typed role */}
@@ -467,6 +469,179 @@ export default function Home() {
               </svg>
               View all on Google Scholar →
             </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          RESUME BUILDER PROMO
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-20 px-5 sm:px-6 border-t border-zinc-800">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+
+            {/* Glowing card */}
+            <div className="relative rounded-2xl overflow-hidden">
+              {/* Gradient border glow */}
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-violet-600/40 via-purple-600/20 to-blue-600/40 blur-sm" />
+
+              <div className="relative bg-zinc-900/90 border border-zinc-700/60 rounded-2xl p-8 sm:p-12">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative grid md:grid-cols-2 gap-10 items-center">
+                  {/* Left: text */}
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/40 bg-violet-500/10 text-xs font-mono text-violet-300 mb-5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+                      free tool
+                    </div>
+                    <h2 className="font-black leading-none mb-4"
+                      style={{ fontSize: "clamp(1.8rem,5vw,3rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+                      <span className="text-white">Build your </span>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Resume</span>
+                      <br />
+                      <span className="text-white">in minutes</span>
+                    </h2>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-7 max-w-md">
+                      A free resume builder built into this portfolio. Fill in your details across 7 sections, see a live preview, and download a clean PDF — no account needed, no data stored.
+                    </p>
+
+                    {/* Feature pills */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {[
+                        { icon: "⚡", label: "Live Preview" },
+                        { icon: "📄", label: "PDF Download" },
+                        { icon: "🔒", label: "No Sign-up" },
+                        { icon: "🎨", label: "Clean Format" },
+                        { icon: "📱", label: "Mobile Friendly" },
+                      ].map((f) => (
+                        <span key={f.label}
+                          className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 bg-zinc-800 border border-zinc-700 rounded-lg text-zinc-400">
+                          <span>{f.icon}</span>{f.label}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link href="/resume-builder"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/40">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      </svg>
+                      Open Resume Builder →
+                    </Link>
+                  </div>
+
+                  {/* Right: mini resume mockup */}
+                  <div className="hidden md:block">
+                    <div className="bg-white rounded-xl shadow-2xl p-5 text-zinc-900 rotate-1 hover:rotate-0 transition-transform duration-300"
+                      style={{ fontSize: "8px", lineHeight: "1.4", fontFamily: "Arial, sans-serif" }}>
+                      {/* Mock header */}
+                      <div style={{ borderBottom: "1.5px solid #18181b", paddingBottom: "8px", marginBottom: "8px" }}>
+                        <div style={{ fontSize: "16px", fontWeight: "700", letterSpacing: "-0.02em" }}>Your Name</div>
+                        <div style={{ color: "#7c3aed", fontWeight: "600", fontSize: "9px", marginBottom: "4px" }}>AI &amp; ML Engineer</div>
+                        <div style={{ display: "flex", gap: "10px", color: "#71717a", fontSize: "7px" }}>
+                          <span>✉ you@email.com</span>
+                          <span>⌖ Your City</span>
+                          <span>in linkedin.com/in/you</span>
+                        </div>
+                      </div>
+                      {/* Mock sections */}
+                      {[
+                        { title: "PROFESSIONAL SUMMARY", lines: ["Passionate engineer with expertise in machine", "learning, deep learning and computer vision..."] },
+                        { title: "EDUCATION", lines: ["B.Sc. Computer Science · Your University · 2022–Present", "GPA: 3.8 / 4.0 · Focus: ML, DL, NLP"] },
+                        { title: "SKILLS", lines: ["AI / ML: Python, TensorFlow, PyTorch, Scikit-learn", "Web: React, Next.js, TypeScript, Tailwind CSS"] },
+                        { title: "PROJECTS", lines: ["Project Name — Tech Stack", "Brief description of what it does and what you built..."] },
+                      ].map((sec) => (
+                        <div key={sec.title} style={{ marginBottom: "8px" }}>
+                          <div style={{ fontSize: "7px", fontWeight: "700", letterSpacing: "0.08em", borderBottom: "0.5px solid #e4e4e7", paddingBottom: "2px", marginBottom: "4px", color: "#18181b" }}>
+                            {sec.title}
+                          </div>
+                          {sec.lines.map((l, i) => (
+                            <div key={i} style={{ color: "#52525b", marginBottom: "1px" }}>{l}</div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          AI CHAT PROMO
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-8 px-5 sm:px-6 border-t border-zinc-800/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="relative rounded-2xl overflow-hidden">
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-600/30 via-purple-600/20 to-fuchsia-600/30 blur-sm" />
+              <div className="relative bg-zinc-900/90 border border-zinc-700/60 rounded-2xl p-8 sm:p-10">
+                <div className="absolute top-0 left-0 w-72 h-72 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left */}
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/40 bg-blue-500/10 text-xs font-mono text-blue-300 mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                      powered by Claude AI
+                    </div>
+                    <h2 className="font-black leading-tight mb-3"
+                      style={{ fontSize: "clamp(1.5rem,2vw,1.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+                      <span className="text-white">Have questions? </span>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Ask my AI</span>
+                    </h2>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-md">
+                      An AI assistant trained on my entire portfolio. Ask it anything — research papers, projects, tech stack, collaboration opportunities, or how to reach me.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6 text-xs font-mono text-zinc-500">
+                      {[
+                        "What's his strongest skill?",
+                        "Is he open to internships?",
+                        "Tell me about TumorXAI",
+                      ].map((q) => (
+                        <span key={q} className="px-2.5 py-1 bg-zinc-800/80 border border-zinc-700 rounded-lg">&quot;{q}&quot;</span>
+                      ))}
+                    </div>
+                    <Link href="/chat"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                      </svg>
+                      Start Chatting →
+                    </Link>
+                  </div>
+
+                  {/* Right: chat mockup */}
+                  <div className="hidden md:flex flex-col gap-2.5 p-4 bg-zinc-950/80 border border-zinc-800 rounded-xl font-mono">
+                    {[
+                      { role: "user",      text: "What research has Zahin published?" },
+                      { role: "assistant", text: "He has 6 research papers spanning Medical AI, Green Computing, XAI and Post-Quantum Cryptography. His most notable is TumorXAI — an explainable brain MRI classifier..." },
+                      { role: "user",      text: "Is he open to collaborations?" },
+                      { role: "assistant", text: "Yes! Zahin is actively looking for research collaborations and internship opportunities in AI/ML. You can reach him via the Connect page." },
+                    ].map((m, i) => (
+                      <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                        <div className={`text-xs px-3 py-2 rounded-xl max-w-[85%] leading-relaxed ${
+                          m.role === "user"
+                            ? "bg-purple-600/80 text-white rounded-br-sm"
+                            : "bg-zinc-800 text-zinc-300 border border-zinc-700/60 rounded-bl-sm"
+                        }`}>
+                          {m.text}
+                        </div>
+                      </div>
+                    ))}
+                    <div className="flex gap-2 mt-1">
+                      <div className="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-1.5 text-xs text-zinc-600">Ask anything...</div>
+                      <div className="w-7 h-7 bg-purple-600 rounded-lg flex items-center justify-center text-white text-xs">↑</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
