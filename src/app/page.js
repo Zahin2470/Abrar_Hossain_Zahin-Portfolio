@@ -208,25 +208,34 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/40 bg-purple-500/10 text-xs font-medium text-purple-300 mb-6 sm:mb-8"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Open to research collaborations
+              Active
             </motion.div>
 
-            {/* Name - allow wrapping on mobile */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="font-black leading-none mb-3 break-words text-[2.2rem] xs:text-[2.7rem] sm:text-[2.7rem] md:text-[2.7rem] lg:text-[2.7rem] text-center lg:text-left"
-              style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}
-            >
-            <div className="whitespace-nowrap">
-              <span className="text-white">Abrar </span>
-              <span className="text-white">Hossain </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-                Zahin
-              </span>
-            </div>
-            </motion.h1>
+{/* Name - Mobile Friendly + One Line */}
+<motion.h1
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2, duration: 0.8 }}
+  className="font-black leading-none mb-4 break-words 
+             text-[1.65rem] 
+             xs:text-[1.85rem] 
+             sm:text-[2.05rem] 
+             md:text-[2.25rem] 
+             lg:text-[2.55rem] 
+             text-center lg:text-left tracking-[-0.03em]"
+  style={{ 
+    fontFamily: "'Syne', sans-serif",
+    letterSpacing: "-0.03em"
+  }}
+>
+  <div className="whitespace-nowrap">
+    <span className="text-white">Abrar </span>
+    <span className="text-white">Hossain </span>
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
+      Zahin
+    </span>
+  </div>
+</motion.h1>
 
             {/* Typed role */}
             <motion.div
@@ -344,8 +353,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="flex items-end justify-between mb-14">
             <div>
-              <p className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-2">Featured Works</p>
-              <h2 className="text-4xl md:text-5xl font-black" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
+              <h2 className="text-3xl md:text-4xl font-black" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
                 Projects
               </h2>
             </div>
@@ -415,8 +423,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="flex items-end justify-between mb-14">
             <div>
-              <p className="text-xs font-mono text-emerald-400 tracking-widest uppercase mb-2">Research Papers</p>
-              <h2 className="text-4xl md:text-5xl font-black" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
+              <h2 className="text-3xl md:text-4xl font-black" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
                 Publications
               </h2>
             </div>
@@ -493,12 +500,8 @@ export default function Home() {
                 <div className="relative grid md:grid-cols-2 gap-10 items-center">
                   {/* Left: text */}
                   <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/40 bg-violet-500/10 text-xs font-mono text-violet-300 mb-5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-                      free tool
-                    </div>
                     <h2 className="font-black leading-none mb-4"
-                      style={{ fontSize: "clamp(1.8rem,5vw,3rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+                      style={{ fontSize: "clamp(1.5rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                       <span className="text-white">Build your </span>
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Resume</span>
                       <br />
@@ -586,17 +589,13 @@ export default function Home() {
                 <div className="relative grid md:grid-cols-2 gap-8 items-center">
                   {/* Left */}
                   <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/40 bg-blue-500/10 text-xs font-mono text-blue-300 mb-4">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                      powered by Claude AI
-                    </div>
                     <h2 className="font-black leading-tight mb-3"
                       style={{ fontSize: "clamp(1.5rem,2vw,1.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                       <span className="text-white">Have questions? </span>
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Ask my AI</span>
                     </h2>
                     <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-md">
-                      An AI assistant trained on my entire portfolio. Ask it anything — research papers, projects, tech stack, collaboration opportunities, or how to reach me.
+                      An AI assistant trained on my entire portfolio. Ask it anything, research papers, projects, tech stack, collaboration opportunities, or how to reach me.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6 text-xs font-mono text-zinc-500">
                       {[

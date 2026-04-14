@@ -211,7 +211,7 @@ export default function Projects() {
           <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-purple-600/30 to-blue-600/30 blur-sm" />
           <div className="relative bg-zinc-900/80 border border-zinc-700/60 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl font-black text-white mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
+              <h3 className="text-1.8xl font-black text-white mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
                 All Projects on GitHub
               </h3>
               <p className="text-sm text-zinc-500">Browse source code, issues, and commit history</p>

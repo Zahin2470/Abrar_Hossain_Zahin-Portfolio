@@ -229,7 +229,7 @@ export default function About() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="mb-20">
           <h2 className="font-black mb-10 text-white"
-            style={{ fontSize: "clamp(2rem,2.5vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+            style={{ fontSize: "clamp(1.8rem,1.8vw,1.8rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
             Skills &amp; Technologies
           </h2>
 
@@ -269,7 +269,7 @@ export default function About() {
         {/* ── SOCIAL LINKS ────────────────────────────────── */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="font-black mb-8 text-white"
-            style={{ fontSize: "clamp(2rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+            style={{ fontSize: "clamp(2rem,2vw,2rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
             Social Profiles
           </h2>
 

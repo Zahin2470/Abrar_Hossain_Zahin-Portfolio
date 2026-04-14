@@ -48,7 +48,7 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "ElderCare-SuperApp",
+    title: "ElderCare SuperApp",
     emoji: "🧓",
     description: "Unified elderly care platform for Bangladesh (TypeScript)",
     descriptionLong: "A unified elderly care platform built for Bangladesh. Integrates health tracking, emergency alerts, caregiver management, and telemedicine into a single accessible TypeScript application.",
@@ -60,7 +60,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Job-Portal",
+    title: "Job Portal",
     emoji: "💼",
     description: "Full-stack job search and management system",
     descriptionLong: "Full-stack job search and management system with employer and candidate dashboards, resume parsing, and smart matching algorithms.",
@@ -72,7 +72,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Green-Browsing-Tracker",
+    title: "Green Browsing Tracker",
     emoji: "🌍",
     description: "Chrome extension that tracks browsing energy & carbon footprint with dashboard",
     descriptionLong: "Chrome extension that monitors browsing energy consumption and carbon footprint in real-time, with a detailed analytics dashboard.",
@@ -84,7 +84,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Blood-Donation-Management-Software",
+    title: "Blood Donation Management Software",
     emoji: "🩸",
     description: "Full-stack blood donation management platform for Bangladesh",
     descriptionLong: "Full-stack platform for managing blood donation operations across Bangladesh, including donor registration, blood bank inventory, and emergency request handling.",
@@ -96,7 +96,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Multiplication-Game",
+    title: "Multiplication Game",
     emoji: "🎮",
     description: "Interactive and fun multiplication learning game",
     descriptionLong: "Interactive and adaptive multiplication learning game designed to make math fun and engaging for students with progressive difficulty levels.",
@@ -108,7 +108,7 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Chat-Application",
+    title: "Chat Application",
     emoji: "💬",
     description: "Real-time messaging application with modern UI",
     descriptionLong: "Real-time messaging application with modern UI, user authentication, group chats, and media sharing capabilities.",

@@ -3,73 +3,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-/* ── System prompt with full portfolio knowledge ──────── */
-const SYSTEM_PROMPT = `You are the AI assistant embedded in Abrar Hossain Zahin's personal portfolio. Your job is to help visitors — recruiters, researchers, collaborators, and students — learn about Zahin in a helpful, friendly, and professional way.
-
-Here is everything you know about Zahin:
-
-## Personal
-- Full name: Abrar Hossain Zahin
-- Role: Aspiring AI & ML Engineer, Researcher
-- University: East West University, Dhaka, Bangladesh
-- Degree: B.Sc. Computer Science and Engineering (2022 – Present)
-- Location: Dhaka, Bangladesh
-- Email: abrarhossain1200@gmail.com (direct visitors to use the Connect page for contact)
-- Status: Open to research collaborations, internships, and AI/ML projects
-
-## Social & Profiles
-- GitHub: github.com/Zahin2470
-- LinkedIn: linkedin.com/in/md-abrar-hossain-zahin
-- Kaggle: kaggle.com/mdabrarhossainzahin
-- Google Scholar: scholar.google.com/citations?user=PggflFIAAAAJ
-- ResearchGate: researchgate.net/profile/Abrar-Zahin-7
-- LeetCode: leetcode.com/u/MdZahin
-- CodeForces: codeforces.com/profile/MD.Zahin
-- YouTube: youtube.com/@Abrar_Hossain_Zahin
-
-## Skills
-- AI/ML: Python, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, HuggingFace (expert level)
-- Web: TypeScript, React, Next.js, Tailwind CSS, Node.js
-- DevOps/Tools: Docker, Git, Jupyter, Linux
-
-## Projects
-1. ElderCare-SuperApp — Unified elderly care platform for Bangladesh. Tech: TypeScript, Next.js, AI
-2. Job-Portal — Full-stack job search and management system. Tech: React, Node.js, MongoDB
-3. Green-Browsing-Tracker — Chrome extension tracking browsing energy & carbon footprint. Tech: JavaScript
-4. Blood-Donation-Management-Software — Blood donation management for Bangladesh. Tech: React, Node.js
-5. Multiplication-Game — Interactive math learning game. Tech: JavaScript
-6. Chat-Application — Real-time messaging app. Tech: React, WebSocket, Node.js
-All are on GitHub: github.com/Zahin2470
-
-## Research Papers (Published / Under Review)
-1. "Privacy-Bandwidth Trade-offs in Post-Quantum TLS: Evaluating Adaptive Padding Strategies Against Handshake Fingerprinting" — Focus: Post-Quantum Cryptography, TLS Security, Fingerprinting Resistance
-2. "TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI Tumor Classification" — Focus: Medical Imaging, Explainable AI, Self-Supervised Learning
-3. "GreenNet: A Lightweight CNN with Knowledge Distillation for Sustainable Edge AI — A Green Score Benchmarking Study on MNIST and CIFAR-10" — Focus: Green AI, Knowledge Distillation, Edge Computing
-4. "GastroVisionNet8: An Attention-Based CNN for Gastric Cancer Classification with XAI" — Focus: Medical AI, Attention Mechanism, Explainable AI
-5. "SentiVec: Sentiment-Aware Vector-based Movie Review Retrieval System" — Focus: NLP, Sentiment Analysis, Vector Retrieval
-6. "Date Palm Tree Monitoring in Drone Imagery Using a Self-Supervised BYOL-Driven YOLOv12s Backbone" — Focus: Computer Vision, Self-Supervised Learning, YOLO, Drone Imagery
-Google Scholar: scholar.google.com/citations?user=PggflFIAAAAJ
-
-## Research Interests
-Medical AI, Explainable AI (XAI), Green AI / Sustainable Computing, Computer Vision, Natural Language Processing, Post-Quantum Cryptography, Self-Supervised Learning, Knowledge Distillation, Edge AI
-
-## Personality & Goals
-- Passionate about building AI that is explainable, ethical, and sustainable
-- Interested in real-world impact, especially in healthcare, environment, and education
-- Looking for research collaborations, internship opportunities, and exciting AI/ML projects
-- Open to co-authoring papers and joining research groups
-
-## Instructions for you:
-- Be conversational, warm, and concise. Don't dump all information at once.
-- If asked about collaboration or contact, direct visitors to the /connect page on the portfolio.
-- If asked about a specific project or paper, give focused details.
-- If asked something you don't know (e.g. specific grades, personal details not above), politely say you don't have that info and suggest reaching out directly.
-- Never make up information. Only use the facts above.
-- Keep responses under 150 words unless a detailed technical answer is genuinely needed.
-- Use occasional markdown bold for emphasis, but keep it readable in a chat bubble.
-- If someone seems like a recruiter, highlight his open-to-work status, relevant skills, and how to connect.
-- If someone seems like a researcher, lead with his papers and research interests.`;
-
 /* ── Suggested questions ──────────────────────────────── */
 const SUGGESTIONS = [
   "What are Zahin's main research areas?",
@@ -80,6 +13,7 @@ const SUGGESTIONS = [
   "How can I collaborate with him?",
   "What is TumorXAI?",
   "What makes his portfolio unique?",
+  "How does he design aesthetic portfolios?",
 ];
 
 /* ── Typing indicator ─────────────────────────────────── */
@@ -144,6 +78,7 @@ function Bubble({ msg }) {
 }
 
 /* ── Main Page ────────────────────────────────────────── */
+
 export default function Chat() {
   const [messages, setMessages] = useState([
     {
@@ -156,10 +91,7 @@ export default function Chat() {
   const [error, setError] = useState(null);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
-
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+  // Removed auto-scroll effect to prevent any scrolling to chat box
 
   const send = async (text) => {
     const trimmed = text.trim();
@@ -173,23 +105,25 @@ export default function Chat() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      // Call our own Next.js API route — safe, server-side, no CORS issues
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
           messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
         }),
       });
 
-      if (!response.ok) throw new Error(`API error ${response.status}`);
       const data = await response.json();
-      const reply = data.content?.find((c) => c.type === "text")?.text || "Sorry, I couldn't generate a response.";
-      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+
+      if (!response.ok) {
+        throw new Error(data.error || `Server error ${response.status}`);
+      }
+
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
     } catch (err) {
-      setError("Couldn't reach the AI. Please try again.");
+      console.error("Chat error:", err);
+      setError(err.message || "Couldn't reach the AI. Please try again.");
       setMessages((prev) => prev.slice(0, -1));
     } finally {
       setLoading(false);
@@ -223,13 +157,12 @@ export default function Chat() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
           <div className="flex items-center justify-between gap-4">
             <div>
+              <br></br>
               <h1 className="font-black leading-none mb-1"
-                style={{ fontSize: "clamp(1.5rem,3vw,2rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
-                <br></br>
+                style={{ fontSize: "clamp(1.5rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                 <span className="text-white">Ask About </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Zahin</span>
               </h1>
-              <p className="text-zinc-500 text-sm">Powered by Claude · Ask anything about his research, skills or projects</p>
             </div>
             <button onClick={reset}
               className="shrink-0 text-xs font-mono px-3 py-2 border border-zinc-800 hover:border-zinc-600 text-zinc-600 hover:text-zinc-300 rounded-lg transition-all">
@@ -314,7 +247,7 @@ export default function Chat() {
               </button>
             </div>
             <p className="text-[10px] font-mono text-zinc-700 mt-2 text-center">
-              Enter to send · Shift+Enter for new line · Responses powered by Anthropic Claude
+              Enter to send · Shift+Enter for new line
             </p>
           </div>
         </motion.div>
