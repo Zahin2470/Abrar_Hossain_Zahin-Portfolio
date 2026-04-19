@@ -21,7 +21,7 @@ const SAMPLE = {
   github: "github.com/Zahin2470",
   website: "abrar-hossain-zahin-portfolio.vercel.app",
   summary: "Passionate AI/ML Engineer and researcher at East West University. Experienced in Deep Learning, NLP, Computer Vision and Explainable AI. Published researcher in medical imaging, green computing, and post-quantum cryptography.",
-  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – Present", gpa: "3.8/4.0", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
+  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – Present", gpa: "3.7", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
   experience: [{ role: "AI/ML Research Student", company: "East West University", period: "2022 – Present", bullets: "Published 6+ research papers in medical AI, green computing and cryptography\nBuilt TumorXAI: explainable brain MRI tumor classifier using self-supervised learning\nDeveloped GreenNet: lightweight CNN with knowledge distillation for edge AI" }],
   skills: [
     { category: "AI / ML", items: "Python, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, HuggingFace" },

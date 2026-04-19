@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-// Using Groq API — 100% FREE, no credit card needed
-// Sign up at: https://console.groq.com → API Keys → Create Key
+// Using API — 100% FREE, no credit card needed
+// Sign up at: https://console.anthropic.com → API Keys → Create Key
 // Add Zahin_API_KEY to your Vercel environment variables
 
 const SYSTEM_PROMPT = `You are the AI assistant embedded in Abrar Hossain Zahin's personal portfolio. Your job is to help visitors — recruiters, researchers, collaborators, and students — learn about Zahin in a helpful, friendly, and professional way.
@@ -69,7 +69,7 @@ export async function POST(request) {
 
     if (!apiKey) {
       return NextResponse.json(
-        { error: "API key not configured. Please add Zahin_API_KEY to your Vercel environment variables. Get a free key at console.groq.com" },
+        { error: "API key not configured. Please add Zahin_API_KEY to your Vercel environment variables. Get a free key at console.anthropic.com" },
         { status: 500 }
       );
     }
@@ -80,7 +80,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
 
-    // Groq uses OpenAI-compatible format — system prompt goes in messages array
+    // OpenAI-compatible format — system prompt goes in messages array
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -103,7 +103,7 @@ export async function POST(request) {
 
     if (!response.ok) {
       const err = await response.text();
-      console.error("Groq API error:", err);
+      console.error("LLM API error:", err);
       return NextResponse.json(
         { error: "AI service error. Please try again." },
         { status: response.status }

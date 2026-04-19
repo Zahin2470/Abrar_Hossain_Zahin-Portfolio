@@ -501,7 +501,7 @@ export default function Home() {
                   {/* Left: text */}
                   <div>
                     <h2 className="font-black leading-none mb-4"
-                      style={{ fontSize: "clamp(1.5rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+                      style={{ fontSize: "clamp(1.5rem,2.5vw,2rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                       <span className="text-white">Build your </span>
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Resume</span>
                       <br />
@@ -553,7 +553,7 @@ export default function Home() {
                       {/* Mock sections */}
                       {[
                         { title: "PROFESSIONAL SUMMARY", lines: ["Passionate engineer with expertise in machine", "learning, deep learning and computer vision..."] },
-                        { title: "EDUCATION", lines: ["B.Sc. Computer Science · Your University · 2022–Present", "GPA: 3.8 / 4.0 · Focus: ML, DL, NLP"] },
+                        { title: "EDUCATION", lines: ["B.Sc. Computer Science · Your University · 2022–Present", "GPA: 3.7 · Focus: ML, DL, NLP"] },
                         { title: "SKILLS", lines: ["AI / ML: Python, TensorFlow, PyTorch, Scikit-learn", "Web: React, Next.js, TypeScript, Tailwind CSS"] },
                         { title: "PROJECTS", lines: ["Project Name — Tech Stack", "Brief description of what it does and what you built..."] },
                       ].map((sec) => (
@@ -568,6 +568,70 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          AI TOOLS PROMO — Summarizer + Idea Generator
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-8 px-5 sm:px-6 border-t border-zinc-800/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="grid md:grid-cols-2 gap-5">
+
+              {/* Paper Summarizer card */}
+              <div className="relative rounded-2xl overflow-hidden group">
+                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/30 to-fuchsia-600/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative bg-zinc-900/80 border border-zinc-800 hover:border-zinc-600 rounded-2xl p-7 transition-colors h-full flex flex-col">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-fuchsia-600 flex items-center justify-center text-2xl shadow-lg shrink-0">📄</div>
+                    <div>
+                      <p className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-1">Free Tool</p>
+                      <h3 className="font-black text-lg text-white" style={{ fontFamily: "'Syne',sans-serif" }}>Paper Summarizer</h3>
+                    </div>
+                  </div>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-5 flex-1">
+                    Paste any research paper abstract or title. The AI breaks it into plain English — problem, method, findings, key terms, and why it matters. Perfect for quickly understanding papers outside your area.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {["Plain English", "Key Terms", "TL;DR", "Instant"].map(f => (
+                      <span key={f} className="text-xs font-mono px-2.5 py-1 bg-zinc-800 border border-zinc-700 text-zinc-400 rounded-lg">{f}</span>
+                    ))}
+                  </div>
+                  <Link href="/paper-summarizer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-sm transition-all duration-200 w-fit">
+                    Try Summarizer →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Research Idea Generator card */}
+              <div className="relative rounded-2xl overflow-hidden group">
+                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-600/30 to-cyan-600/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative bg-zinc-900/80 border border-zinc-800 hover:border-zinc-600 rounded-2xl p-7 transition-colors h-full flex flex-col">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-2xl shadow-lg shrink-0">💡</div>
+                    <div>
+                      <p className="text-xs font-mono text-blue-400 tracking-widest uppercase mb-1">Free Tool</p>
+                      <h3 className="font-black text-lg text-white" style={{ fontFamily: "'Syne',sans-serif" }}>Research Idea Generator</h3>
+                    </div>
+                  </div>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-5 flex-1">
+                    Enter any research topic - Medical Imaging, Cybersecurity, Green AI, NLP - and get 5 novel, publishable research directions with full methodology, novelty factor, and expected outcomes.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {["5 Novel Ideas", "Methodology", "12 Topic Presets", "Expandable"].map(f => (
+                      <span key={f} className="text-xs font-mono px-2.5 py-1 bg-zinc-800 border border-zinc-700 text-zinc-400 rounded-lg">{f}</span>
+                    ))}
+                  </div>
+                  <Link href="/research-ideas"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 font-bold text-sm transition-all duration-200 w-fit">
+                    Generate Ideas →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -651,7 +715,7 @@ export default function Home() {
       <section className="py-24 px-6 border-t border-zinc-800">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <p className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-4">let&apos;s_collaborate</p>
+            <p className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-4">let&apos;s Collaborate</p>
             <h2 className="text-2xl md:text-3xl font-black mb-6 leading-none"
               style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "-0.03em" }}>
               Open to research<br />
