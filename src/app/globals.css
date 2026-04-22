@@ -2,105 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Theme tokens ─────────────────────────────────────── */
-:root {
-  --bg-page:       #f8fafc;
-  --bg-card:       #f1f5f9;
-  --bg-card2:      #e8edf4;
-  --border:        #cbd5e1;
-  --border-subtle: #e2e8f0;
-  --text-primary:  #0f172a;
-  --text-secondary:#475569;
-  --text-muted:    #94a3b8;
-  --scrollbar-bg:  #e2e8f0;
-}
-
-.dark {
-  --bg-page:       #09090b;
-  --bg-card:       #18181b;
-  --bg-card2:      #27272a;
-  --border:        #3f3f46;
-  --border-subtle: #27272a;
-  --text-primary:  #fafafa;
-  --text-secondary:#a1a1aa;
-  --text-muted:    #52525b;
-  --scrollbar-bg:  #a855f7;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Smooth theme transition on everything */
-*, *::before, *::after {
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-/* But NOT on animations/transforms — would make them sluggish */
-[class*="animate-"], [style*="animation"], svg path {
-  transition: none !important;
-}
-
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* ── Body — matches canvas bg so no flash ──────────────── */
 body {
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--bg-page);
-  color: var(--text-primary);
+  background: #050505;
+  color: #fafafa;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* ── Light-mode page background override ─────────────── */
-/* Pages hardcode bg-zinc-950 — override them in light mode */
+/* ════════════════════════════════════════════════════════
+   DARK MODE
+   Page outer wrappers are transparent (fixed in each page.js).
+   Cards/sections use semi-transparent bg so stars show through.
+   ════════════════════════════════════════════════════════ */
+.dark .bg-zinc-950,
+.dark [class*="bg-zinc-950"] { background-color: rgba(5,5,5,0.80) !important; }
+.dark .bg-zinc-900,
+.dark [class*="bg-zinc-900"] { background-color: rgba(9,9,9,0.75) !important; }
+.dark .bg-zinc-800,
+.dark [class*="bg-zinc-800"] { background-color: rgba(18,18,18,0.72) !important; }
+
+/* borders get a subtle gold tint */
+.dark .border-zinc-800,
+.dark [class*="border-zinc-800"] { border-color: rgba(201,168,76,0.14) !important; }
+.dark .border-zinc-700,
+.dark [class*="border-zinc-700"] { border-color: rgba(201,168,76,0.22) !important; }
+
+/* sections/header/footer stay transparent */
+.dark section, .dark header,
+.dark footer,  .dark main    { background-color: transparent !important; }
+
+/* Navbar needs slight bg so text is readable over stars */
+.dark header {
+  background-color: rgba(5,5,5,0.85) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* ════════════════════════════════════════════════════════
+   LIGHT MODE — opaque so stars are hidden
+   ════════════════════════════════════════════════════════ */
+html:not(.dark) body { background: #f8fafc; color: #0f172a; }
+
+html:not(.dark) section,
+html:not(.dark) footer,
+html:not(.dark) main   { background-color: rgba(248,250,252,0.97) !important; }
+
+html:not(.dark) header { background-color: rgba(255,255,255,0.95) !important; backdrop-filter: blur(12px); }
+
 html:not(.dark) .bg-zinc-950,
-html:not(.dark) [class*="bg-zinc-950"] {
-  background-color: var(--bg-page) !important;
-}
+html:not(.dark) [class*="bg-zinc-950"] { background-color: #f8fafc !important; }
 html:not(.dark) .bg-zinc-900,
-html:not(.dark) [class*="bg-zinc-900"] {
-  background-color: var(--bg-card) !important;
-}
+html:not(.dark) [class*="bg-zinc-900"] { background-color: #f1f5f9 !important; }
 html:not(.dark) .bg-zinc-800,
-html:not(.dark) [class*="bg-zinc-800"] {
-  background-color: var(--bg-card2) !important;
-}
+html:not(.dark) [class*="bg-zinc-800"] { background-color: #e2e8f0 !important; }
 html:not(.dark) .border-zinc-800,
-html:not(.dark) [class*="border-zinc-800"] {
-  border-color: var(--border-subtle) !important;
-}
+html:not(.dark) [class*="border-zinc-800"] { border-color: #e2e8f0 !important; }
 html:not(.dark) .border-zinc-700,
-html:not(.dark) [class*="border-zinc-700"] {
-  border-color: var(--border) !important;
-}
-html:not(.dark) .text-white {
-  color: var(--text-primary) !important;
-}
+html:not(.dark) [class*="border-zinc-700"] { border-color: #cbd5e1 !important; }
+
+html:not(.dark) .text-white           { color: #0f172a !important; }
+html:not(.dark) .text-zinc-100,
 html:not(.dark) .text-zinc-200,
-html:not(.dark) .text-zinc-300 {
-  color: var(--text-primary) !important;
-}
+html:not(.dark) .text-zinc-300        { color: #1e293b !important; }
 html:not(.dark) .text-zinc-400,
-html:not(.dark) .text-zinc-500 {
-  color: var(--text-secondary) !important;
-}
+html:not(.dark) .text-zinc-500        { color: #475569 !important; }
 html:not(.dark) .text-zinc-600,
-html:not(.dark) .text-zinc-700 {
-  color: var(--text-muted) !important;
+html:not(.dark) .text-zinc-700        { color: #64748b !important; }
+
+/* ── Smooth transitions ─────────────────────────────────── */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+}
+canvas, svg, svg *,
+[class*="animate-"], [style*="animation"] { transition: none !important; }
+button, a {
+  transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, opacity 0.2s ease !important;
 }
 
-/* ── Scrollbar ────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-bg);
-  border-radius: 2px;
+::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.45); border-radius: 2px; }
+::selection { background: rgba(201,168,76,0.25); color: #fafafa; }
+
+/* ── Hide native cursor on desktop ─────────────────────── */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
 }
 
-::selection { background: rgba(168,85,247,0.25); color: inherit; }
+/* ── Utilities ──────────────────────────────────────────── */
+[data-reveal] { will-change: opacity, transform; }
 
-/* ── Shared utility ───────────────────────────────────── */
 .tag-pill {
-  @apply text-xs font-medium px-2.5 py-1 rounded-full border border-purple-500/30 text-purple-300 bg-purple-500/10;
+  @apply text-xs font-medium px-2.5 py-1 rounded-full;
+  border: 1px solid rgba(168,85,247,0.3);
+  color: rgb(192,132,252);
+  background: rgba(168,85,247,0.1);
 }

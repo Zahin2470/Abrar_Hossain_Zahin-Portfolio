@@ -3,43 +3,54 @@ import { useState, useEffect, createContext, useContext } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import CursorSpotlight from "@/components/CursorSpotlight";
+import CustomCursor from "@/components/CustomCursor";
+import StarCanvas from "@/components/StarCanvas";
 
-/* ── Theme context — lets any child read / toggle theme ── */
 export const ThemeContext = createContext({ dark: true, toggle: () => {} });
 export const useTheme = () => useContext(ThemeContext);
 
 export default function ThemeWrapper({ children }) {
-  const [dark, setDark] = useState(true); // default dark
+  const [dark, setDark] = useState(true);
 
-  // Load saved preference on mount
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = saved ? saved === "dark" : prefersDark;
-    setDark(isDark);
+    setDark(saved ? saved === "dark" : prefersDark);
   }, []);
 
-  // Apply class to <html> whenever dark changes
   useEffect(() => {
-    const html = document.documentElement;
-    if (dark) {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
-  const toggle = () => setDark(d => !d);
-
   return (
-    <ThemeContext.Provider value={{ dark, toggle }}>
-      <CursorSpotlight />
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-      <ScrollToTop />
+    <ThemeContext.Provider value={{ dark, toggle: () => setDark(d => !d) }}>
+
+      {/* Layer 1 — Star canvas: fixed, below everything */}
+      <StarCanvas />
+
+      {/* Layer 2 — Page content: sits above canvas.
+          MUST use position:relative + zIndex:2.
+          Page backgrounds are transparent so canvas shows through. */}
+      <div style={{
+        position: "relative",
+        zIndex: 2,
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        background: "transparent",
+      }}>
+        <Navbar />
+        <main style={{ flex: 1, background: "transparent" }}>
+          {children}
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+
+      {/* Layer 3 — Cursor: always on top */}
+      <CustomCursor />
+
     </ThemeContext.Provider>
   );
 }

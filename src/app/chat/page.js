@@ -141,7 +141,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-20 pb-6 flex flex-col" style={{ overflowX: "hidden" }}>
+    <div className="relative text-white min-h-screen pt-20 pb-6 flex flex-col" style={{ overflowX: "hidden", background: "transparent" }}>
 
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -159,7 +159,7 @@ export default function Chat() {
             <div>
               <br></br>
               <h1 className="font-black leading-none mb-1"
-                style={{ fontSize: "clamp(1.5rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+                style={{ fontSize: "clamp(1.8rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                 <span className="text-white">Ask About </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Zahin</span>
               </h1>
@@ -247,7 +247,7 @@ export default function Chat() {
               </button>
             </div>
             <p className="text-[10px] font-mono text-zinc-700 mt-2 text-center">
-              Enter to send · Shift+Enter for new line
+              Enter to send · Shift+Enter for new line · Free AI
             </p>
           </div>
         </motion.div>
