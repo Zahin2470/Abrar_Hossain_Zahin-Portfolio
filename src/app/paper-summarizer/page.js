@@ -167,7 +167,7 @@ Abstract: This paper proposes..."
             <button
               onClick={handleSubmit}
               disabled={!input.trim() || loading}
-              className="flex items-center gap-2.5 px-7 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30"
+              className="flex items-center gap-2.5 px-7 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-80 disabled:cursor-not-allowed font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30"
             >
               {loading ? (
                 <><LoadingDots /><span>Analyzing...</span></>

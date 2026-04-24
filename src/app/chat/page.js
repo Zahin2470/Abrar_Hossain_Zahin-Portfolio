@@ -232,14 +232,14 @@ export default function Chat() {
                 placeholder="Ask about research, projects, skills, collaboration..."
                 rows={1}
                 disabled={loading}
-                className="flex-1 bg-zinc-800/80 border border-zinc-700 focus:border-purple-500/60 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 outline-none transition-colors resize-none font-mono disabled:opacity-50"
+                className="flex-1 bg-zinc-800/80 border border-zinc-700 focus:border-purple-500/60 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 outline-none transition-colors resize-none font-mono disabled:opacity-80"
                 style={{ minHeight: "42px", maxHeight: "120px" }}
                 onInput={(e) => { e.target.style.height = "auto"; e.target.style.height = Math.min(e.target.scrollHeight, 120) + "px"; }}
               />
               <button
                 onClick={() => send(input)}
                 disabled={!input.trim() || loading}
-                className="shrink-0 w-10 h-10 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-200 self-end"
+                className="shrink-0 w-10 h-10 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:opacity-80 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-200 self-end"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
@@ -258,7 +258,7 @@ export default function Chat() {
           <div className="flex flex-wrap gap-2">
             {SUGGESTIONS.map((q) => (
               <button key={q} onClick={() => send(q)} disabled={loading}
-                className="text-xs font-mono px-3 py-1.5 bg-zinc-900/60 border border-zinc-800 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-300 rounded-lg transition-all duration-200 disabled:opacity-40 text-left">
+                className="text-xs font-mono px-3 py-1.5 bg-zinc-900/60 border border-zinc-800 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-300 rounded-lg transition-all duration-200 disabled:opacity-80 text-left">
                 {q}
               </button>
             ))}

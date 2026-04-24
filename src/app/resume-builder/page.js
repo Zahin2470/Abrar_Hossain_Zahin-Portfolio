@@ -15,13 +15,13 @@ const EMPTY = {
 
 const SAMPLE = {
   name: "Abrar Hossain Zahin", title: "AI & ML Engineer",
-  email: "abrarhossain1200@gmail.com", phone: "+880 1749-498717",
+  email: "abrarhossain1200@gmail.com", phone: "+880 1XXX-XXXXXX",
   location: "Dhaka, Bangladesh",
   linkedin: "linkedin.com/in/md-abrar-hossain-zahin",
   github: "github.com/Zahin2470",
   website: "abrar-hossain-zahin-portfolio.vercel.app",
   summary: "Passionate AI/ML Engineer and researcher at East West University. Experienced in Deep Learning, NLP, Computer Vision and Explainable AI. Published researcher in medical imaging, green computing, and post-quantum cryptography.",
-  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – Present", gpa: "3.7", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
+  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – Present", gpa: "3.8/4.0", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
   experience: [{ role: "AI/ML Research Student", company: "East West University", period: "2022 – Present", bullets: "Published 6+ research papers in medical AI, green computing and cryptography\nBuilt TumorXAI: explainable brain MRI tumor classifier using self-supervised learning\nDeveloped GreenNet: lightweight CNN with knowledge distillation for edge AI" }],
   skills: [
     { category: "AI / ML", items: "Python, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, HuggingFace" },
@@ -518,7 +518,7 @@ export default function ResumeBuilder() {
   ];
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-20 pb-16" style={{ overflowX: "hidden" }}>
+    <div className="relative text-white min-h-screen pt-20 pb-16" style={{ overflowX: "hidden", background: "transparent" }}>
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{ backgroundImage: "linear-gradient(to right,#a855f7 1px,transparent 1px),linear-gradient(to bottom,#a855f7 1px,transparent 1px)", backgroundSize: "72px 72px" }} />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-700/8 rounded-full blur-3xl pointer-events-none" />
@@ -526,7 +526,6 @@ export default function ResumeBuilder() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <br></br>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
@@ -535,7 +534,7 @@ export default function ResumeBuilder() {
                 <span className="text-white">Resume </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Builder</span>
               </h1>
-              <p className="text-zinc-500 text-sm">Pick a template · choose a color · fill in details · download PDF</p>
+              <p className="text-zinc-300 text-sm">Pick a Template · Choose a Color · Fill in Details · Download PDF</p>
             </div>
             <div className="flex items-center gap-3 shrink-0 flex-wrap">
               <button onClick={() => setData(SAMPLE)} className="text-xs font-mono px-3 py-2 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition-all">Load Sample</button>
@@ -648,7 +647,7 @@ export default function ResumeBuilder() {
                             <div className="sm:col-span-2"><Label>Degree *</Label><Input value={e.degree} onChange={ev => setArr("education", i, "degree", ev.target.value)} placeholder="B.Sc. Computer Science & Engineering" /></div>
                             <div><Label>Institution *</Label><Input value={e.institution} onChange={ev => setArr("education", i, "institution", ev.target.value)} placeholder="East West University" /></div>
                             <div><Label>Period</Label><Input value={e.period} onChange={ev => setArr("education", i, "period", ev.target.value)} placeholder="2022 – Present" /></div>
-                            <div><Label>GPA</Label><Input value={e.gpa} onChange={ev => setArr("education", i, "gpa", ev.target.value)} placeholder="3.7" /></div>
+                            <div><Label>GPA</Label><Input value={e.gpa} onChange={ev => setArr("education", i, "gpa", ev.target.value)} placeholder="3.8 / 4.0" /></div>
                             <div><Label>Details</Label><Input value={e.details} onChange={ev => setArr("education", i, "details", ev.target.value)} placeholder="Focus: ML, DL, NLP..." /></div>
                           </div>
                         </div>

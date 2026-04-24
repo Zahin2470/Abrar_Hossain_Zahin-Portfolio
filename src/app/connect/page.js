@@ -196,10 +196,8 @@ export default function Connect() {
           className="mb-16">
           <h1 className="font-black leading-none mb-5"
             style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}>
-            <span className="block text-white">Let&apos;s Build</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-              Something Great
-            </span>
+            <span className="text-white">Let&apos;s Build </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Something Great</span>  
           </h1>
           <p className="text-zinc-400 max-w-xl leading-relaxed">
             Open to research collaborations, ML projects, and conversations about AI. Pick any platform below or drop a message directly.

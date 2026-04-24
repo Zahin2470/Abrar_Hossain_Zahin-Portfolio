@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /* ── Difficulty config ──────────────────────────────────── */
 const DIFF_CONFIG = {
-  MSc:      { color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/30" },
-  PhD:      { color: "text-amber-400",   bg: "bg-amber-500/10 border-amber-500/30" },
-  Industry: { color: "text-blue-400",    bg: "bg-blue-500/10 border-blue-500/30" },
+  MSc:      { color: "text-emerald-200", bg: "bg-emerald-500/10 border-emerald-200/30" },
+  PhD:      { color: "text-amber-200",   bg: "bg-amber-500/10 border-amber-500/30" },
+  Industry: { color: "text-blue-200",    bg: "bg-blue-500/10 border-blue-500/30" },
 };
 
 /* ── Preset topic suggestions ───────────────────────────── */
@@ -52,7 +52,7 @@ function ThinkingLoader({ topic }) {
         🧠
       </motion.div>
       <div className="text-center">
-        <p className="text-sm font-mono text-purple-400 mb-2">Generating ideas for: <strong className="text-white">{topic}</strong></p>
+        <p className="text-sm font-mono text-purple-200 mb-2">Generating Ideas for: <strong className="text-white">{topic}</strong></p>
         <AnimatePresence mode="wait">
           <motion.p key={step}
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
@@ -241,7 +241,7 @@ export default function ResearchIdeas() {
   const selectPreset = (label) => { setTopic(label); setResult(null); setError(null); };
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-20" style={{ overflowX: "hidden" }}>
+    <div className="relative text-white min-h-screen pt-24 pb-20" style={{ overflowX: "hidden", background: "transparent" }}>
 
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -262,15 +262,18 @@ export default function ResearchIdeas() {
             <p className="text-xs font-mono text-blue-400 tracking-widest uppercase">AI Research Idea Generator</p>
           </div>
           <h1 className="font-black leading-none mb-3"
-            style={{ fontSize: "clamp(2rem,3vw,2rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
+            style={{ fontSize: "clamp(2rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
             <span className="text-white">Research </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Idea Generator</span>
           </h1>
-          <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          <p className="text-zinc-200 text-sm leading-relaxed max-w-2xl">
             Enter any research topic and get 5 novel, publishable research directions - each with a clear problem statement, methodology, novelty factor, and expected outcomes.
           </p>
           <div className="flex items-center gap-3 mt-4 flex-wrap">
-            <span className="text-xs font-mono text-zinc-600">Multiple ideas · Full methodology · Click to expand</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-100/30 bg-blue-500/10 text-xs font-mono text-blue-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-200 animate-pulse" />
+            </div>
+            <span className="text-xs font-mono text-zinc-200">Multiple Ideas · Full methodology · Click to expand</span>
           </div>
         </motion.div>
 
@@ -281,7 +284,7 @@ export default function ResearchIdeas() {
               className="mb-8">
 
               {/* Preset chips */}
-              <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Quick select a topic:</p>
+              <p className="text-[10px] font-mono text-zinc-300 uppercase tracking-widest mb-3">Quick select a topic:</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-6">
                 {PRESET_TOPICS.map((preset) => (
                   <button key={preset.label} onClick={() => selectPreset(preset.label)}
@@ -301,7 +304,7 @@ export default function ResearchIdeas() {
 
               {/* Text input */}
               <div className="mb-3">
-                <label className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-2">
+                <label className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block mb-2">
                   Or type your own topic:
                 </label>
                 <input
@@ -316,7 +319,7 @@ export default function ResearchIdeas() {
               {/* Optional context */}
               <div className="mb-5">
                 <button onClick={() => setShowContext(!showContext)}
-                  className="text-xs font-mono text-zinc-600 hover:text-zinc-400 transition-colors mb-2 flex items-center gap-1">
+                  className="text-xs font-mono text-zinc-400 hover:text-zinc-400 transition-colors mb-2 flex items-center gap-1">
                   {showContext ? "▾" : "▸"} Add context (optional)
                 </button>
                 <AnimatePresence>
@@ -338,7 +341,7 @@ export default function ResearchIdeas() {
               <button
                 onClick={handleSubmit}
                 disabled={!topic.trim() || loading}
-                className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30"
+                className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:opacity-80 disabled:cursor-not-allowed font-bold text-sm transition-all duration-200 shadow-lg shadow-purple-900/30"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>

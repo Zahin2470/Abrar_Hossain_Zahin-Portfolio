@@ -138,7 +138,7 @@ export default function Projects() {
   const featured = projects.filter((p) => p.featured).length;
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-24 overflow-hidden">
+    <div className="relative text-white min-h-screen pt-24 pb-24 overflow-hidden" style={{ background: "transparent" }}>
       <GridBg />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -147,14 +147,12 @@ export default function Projects() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
           className="mb-14">
           <h1 className="font-black leading-none mb-5"
-            style={{ fontSize: "clamp(2rem, 3vw, 3.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}>
-            <span className="block text-white">Things I&apos;ve</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-              Built
-            </span>
+            style={{ fontSize: "clamp(2rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}>
+            <span className="text-white">Things I&apos;ve </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Built</span>  
           </h1>
           <p className="text-zinc-400 max-w-xl leading-relaxed">
-            From AI-powered healthcare platforms to Chrome extensions and real-time apps, each project solves a real problem.
+            From AI-powered healthcare platforms to Chrome extensions and real-time apps - each project solves a real problem.
           </p>
         </motion.div>
 
@@ -211,7 +209,7 @@ export default function Projects() {
           <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-purple-600/30 to-blue-600/30 blur-sm" />
           <div className="relative bg-zinc-900/80 border border-zinc-700/60 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-1.8xl font-black text-white mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
+              <h3 className="text-2xl font-black text-white mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
                 All Projects on GitHub
               </h3>
               <p className="text-sm text-zinc-500">Browse source code, issues, and commit history</p>

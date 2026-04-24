@@ -165,7 +165,7 @@ export default function Research() {
     : researchPapers.filter((p) => p.tags.includes(activeTag));
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-24 overflow-hidden">
+    <div className="relative text-white min-h-screen pt-24 pb-24 overflow-hidden" style={{ background: "transparent" }}>
       <HexBackground />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">
@@ -181,12 +181,10 @@ export default function Research() {
           </p>
           <h1
             className="font-black leading-none mb-6"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}
+            style={{ fontSize: "clamp(3rem, 3vw, 2.5rem)", fontFamily: "'Syne', sans-serif", letterSpacing: "-0.04em" }}
           >
-            <span className="block text-white">Research &</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-              Publications
-            </span>
+            <span className="text-white">Research & </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Publications</span>
           </h1>
           <p className="text-zinc-400 max-w-2xl leading-relaxed">
             Academic contributions spanning medical imaging, explainable AI,<br className="hidden md:block"/>
