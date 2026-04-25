@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { siteConfig, projects, researchPapers } from "@/lib/data";
+import GitHubStats from "@/components/GitHubStats";
 
 /* ── Animated counter hook ─────────────────────────────── */
 function useCounter(target, duration = 2000) {
@@ -211,31 +212,31 @@ export default function Home() {
               Active
             </motion.div>
 
-{/* Name - Mobile Friendly + One Line */}
-<motion.h1
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2, duration: 0.8 }}
-  className="font-black leading-none mb-4 break-words 
-             text-[1.65rem] 
-             xs:text-[1.85rem] 
-             sm:text-[2.05rem] 
-             md:text-[2.25rem] 
-             lg:text-[2.55rem] 
-             text-center lg:text-left tracking-[-0.03em]"
-  style={{ 
-    fontFamily: "'Syne', sans-serif",
-    letterSpacing: "-0.03em"
-  }}
->
-  <div className="whitespace-nowrap">
-    <span className="text-white">Abrar </span>
-    <span className="text-white">Hossain </span>
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-      Zahin
-    </span>
-  </div>
-</motion.h1>
+          {/* Name - Mobile Friendly + One Line */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="font-black leading-none mb-4 break-words 
+                      text-[1.65rem] 
+                      xs:text-[1.85rem] 
+                      sm:text-[2.05rem] 
+                      md:text-[2.25rem] 
+                      lg:text-[2.55rem] 
+                      text-center lg:text-left tracking-[-0.03em]"
+            style={{ 
+              fontFamily: "'Syne', sans-serif",
+              letterSpacing: "-0.03em"
+            }}
+          >
+            <div className="whitespace-nowrap">
+              <span className="text-white">Abrar </span>
+              <span className="text-white">Hossain </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
+                Zahin
+              </span>
+            </div>
+          </motion.h1>
 
             {/* Typed role */}
             <motion.div
@@ -256,8 +257,7 @@ export default function Home() {
             {/* CTA row */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
-              className="flex flex-wrap gap-3 mb-8 sm:mb-10 justify-center lg:justify-start"
-            >
+              className="flex flex-wrap gap-3 mb-8 sm:mb-10 justify-center lg:justify-start">
               <a href={siteConfig.resumeUrl} target="_blank" rel="noopener noreferrer"
                 className="group relative px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 font-semibold text-sm hover:text-zinc-300 transition-all duration-200"
               >
