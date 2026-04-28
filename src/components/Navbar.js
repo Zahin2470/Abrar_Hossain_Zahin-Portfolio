@@ -33,7 +33,7 @@ export default function Navbar() {
       {/* Aesthetic Blur Container */}
       <div className="absolute inset-0 bg-white/70 dark:bg-zinc-950/80 backdrop-blur-2xl border-b border-zinc-200/50 dark:border-zinc-800/50 shadow-sm shadow-black/5" />
 
-      <nav className="relative max-w-[1440px] mx-auto px-8 py-5 flex justify-between items-center gap-8">
+      <nav className="relative max-w-[1440px] mx-auto px-8 py-3 flex justify-between items-center gap-8">
         
         {/* Logo with Magnetic Hover Effect */}
         <motion.div 
@@ -42,7 +42,7 @@ export default function Navbar() {
           className="shrink-0"
         >
           <Link href="/" className="group flex items-center gap-2">
-            <span className="text-2.5xl font-black tracking-tighter bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]" style={{ fontFamily: "'Syne', sans-serif" }}>
+            <span className="text-2.6xl font-black tracking-tighter bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]" style={{ fontFamily: "'Syne', sans-serif" }}>
               {siteConfig.shortName}
             </span>
           </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
           {/* Modern Mobile Burger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden w-12 h-12 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center gap-1.5"
+            className="xl:hidden w-10 h-10 rounded-2xl bg-zinc-300 dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 flex flex-col items-center justify-center gap-1.5"
           >
             <motion.span animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }} className="w-6 h-0.5 bg-zinc-900 dark:bg-white rounded-full" />
             <motion.span animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }} className="w-6 h-0.5 bg-zinc-900 dark:bg-white rounded-full" />

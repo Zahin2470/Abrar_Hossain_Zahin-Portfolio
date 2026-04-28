@@ -51,7 +51,7 @@ function PaperCard({ paper, index }) {
 
       <div
         onClick={() => setExpanded(!expanded)}
-        className="relative bg-zinc-900/90 border border-zinc-800 group-hover:border-zinc-600 rounded-2xl p-6 cursor-pointer transition-all duration-300 select-none"
+        className="relative bg-zinc-900/90 border border-purple-800 group-hover:border-zinc-600 rounded-2xl p-6 cursor-pointer transition-all duration-300 select-none"
       >
         {/* Top row */}
         <div className="flex items-start gap-4 mb-4">
@@ -86,7 +86,7 @@ function PaperCard({ paper, index }) {
           <motion.div
             animate={{ rotate: expanded ? 180 : 0 }}
             transition={{ duration: 0.3 }}
-            className="shrink-0 w-7 h-7 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-600 group-hover:border-zinc-500 group-hover:text-zinc-400 transition-all"
+            className="shrink-0 w-7 h-7 rounded-full border border-purple-800 flex items-center justify-center text-zinc-600 group-hover:border-zinc-500 group-hover:text-zinc-400 transition-all"
           >
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
@@ -120,7 +120,7 @@ function PaperCard({ paper, index }) {
             >
               <div className="mt-5 ml-14 pt-5 border-t border-zinc-800">
                 {/* Focus line — styled as terminal output */}
-                <div className="bg-zinc-950 rounded-xl p-4 mb-4 font-mono border border-zinc-800">
+                <div className="bg-zinc-950 rounded-xl p-4 mb-4 font-mono border border-purple-800">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/60"/>
@@ -206,7 +206,7 @@ export default function Research() {
               className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 ${
                 activeTag === area
                   ? "bg-purple-600 text-white border border-purple-500"
-                  : "border border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300 bg-zinc-900/60"
+                  : "border border-purple-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300 bg-zinc-900/60"
               }`}
             >
               {activeTag === area && <span className="mr-1">▸</span>}
@@ -227,7 +227,7 @@ export default function Research() {
             { num: researchPapers.filter(p => p.url).length || "1", label: "Published",  color: "from-emerald-400 to-teal-400" },
             { num: Array.from(new Set(researchPapers.flatMap(p => p.tags))).length, label: "Research Areas", color: "from-blue-400 to-cyan-400" },
           ].map((s, i) => (
-            <div key={i} className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 text-center">
+            <div key={i} className="bg-zinc-900/60 border border-purple-800 rounded-xl p-4 text-center">
               <p className={`text-3xl font-black bg-gradient-to-r ${s.color} bg-clip-text text-transparent mb-1`}
                 style={{ fontFamily: "'Syne', sans-serif" }}>
                 {s.num}

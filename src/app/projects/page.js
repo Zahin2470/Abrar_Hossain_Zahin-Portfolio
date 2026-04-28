@@ -57,7 +57,7 @@ function ProjectCard({ project, index }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.94 }}
         transition={{ duration: 0.45, delay: index * 0.06 }}
-        className="group relative h-full bg-zinc-900 border border-zinc-800 hover:border-zinc-600 rounded-2xl overflow-hidden flex flex-col transition-colors duration-300"
+        className="group relative h-full bg-zinc-900 border border-zinc-700 hover:border-zinc-600 rounded-2xl overflow-hidden flex flex-col transition-colors duration-300"
       >
         {/* Gradient glow behind card on hover */}
         <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-15 blur transition-opacity duration-500 pointer-events-none`} />
@@ -164,7 +164,7 @@ export default function Projects() {
             { num: featured,                           label: "Featured",        color: "from-emerald-400 to-teal-400" },
             { num: Array.from(new Set(projects.flatMap(p => p.tags))).length, label: "Technologies", color: "from-blue-400 to-cyan-400" },
           ].map((s, i) => (
-            <div key={i} className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 text-center">
+            <div key={i} className="bg-zinc-900/60 border border-purple-800 rounded-xl p-4 text-center">
               <p className={`text-3xl font-black bg-gradient-to-r ${s.color} bg-clip-text text-transparent mb-1`}
                 style={{ fontFamily: "'Syne', sans-serif" }}>{s.num}</p>
               <p className="text-xs font-mono text-zinc-600">{s.label}</p>
@@ -180,7 +180,7 @@ export default function Projects() {
               className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 ${
                 active === tag
                   ? "bg-purple-600 text-white border border-purple-500"
-                  : "border border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300 bg-zinc-900/60"
+                  : "border border-purple-900 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300 bg-zinc-900/60"
               }`}>
               {active === tag && <span className="mr-1">▸</span>}
               {tag}

@@ -239,7 +239,7 @@ export default function Connect() {
           <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
             <div className="relative">
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/15 to-blue-600/10 blur-sm" />
-              <div className="relative bg-zinc-900/70 border border-zinc-600/60 rounded-3xl p-6 sm:p-8">
+              <div className="relative bg-zinc-900/70 border border-purple-600/60 rounded-3xl p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-lg">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,7 +262,7 @@ export default function Connect() {
             transition={{ delay: 0.15 }} className="space-y-4">
 
             {/* Direct email card */}
-            <div className="bg-zinc-900/70 border border-zinc-600/60 rounded-2xl p-5">
+            <div className="bg-zinc-900/70 border border-purple-600/60 rounded-2xl p-5">
               <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Direct Email</p>
               <a href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-3 group">
@@ -279,7 +279,7 @@ export default function Connect() {
             </div>
 
             {/* Response time card */}
-            <div className="bg-zinc-900/70 border border-zinc-500/60 rounded-3xl p-5">
+            <div className="bg-zinc-900/70 border border-purple-500/60 rounded-3xl p-5">
               <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-3">Response Time</p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
@@ -296,7 +296,7 @@ export default function Connect() {
             </div>
 
             {/* Open to card */}
-            <div className="bg-zinc-900/70 border border-zinc-500/60 rounded-3xl p-5">
+            <div className="bg-zinc-900/70 border border-purple-500/60 rounded-3xl p-5">
               <p className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest mb-4">Open To</p>
               <div className="space-y-2.5">
                 {[

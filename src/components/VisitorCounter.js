@@ -64,7 +64,7 @@ export default function VisitorCounter() {
       </span>
 
       {/* Animated count flip */}
-      <span className="text-zinc-500 dark:text-zinc-500">
+      <span className="text-zinc-500 dark:text-zinc-500 whitespace-nowrap">
         <AnimatePresence mode="wait">
           <motion.span
             key={count}

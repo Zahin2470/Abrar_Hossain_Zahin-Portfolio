@@ -125,7 +125,7 @@ export const researchPapers = [
     id: 1,
     emoji: "📄",
     iconGradient: "from-violet-500 to-fuchsia-500",
-    title: "Privacy-Bandwidth Trade-offs in Post-Quantum TLS: Evaluating Adaptive Padding Strategies Against Handshake Fingerprinting",
+    title: "SADAP: Optimizing Hybrid Padding Strategies in Post-Quantum TLS to Mitigate Handshake Fingerprinting and Addressing Privacy-Bandwidth Trade-offs",
     focus: "Post-Quantum Cryptography, TLS Security, Fingerprinting Resistance",
     tags: ["Cryptography", "Security", "Post-Quantum"],
     url: null,

@@ -48,11 +48,11 @@ const THEMES = {
 const Label = ({ children }) => <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">{children}</label>;
 const Input = ({ value, onChange, placeholder }) => (
   <input value={value} onChange={onChange} placeholder={placeholder}
-    className="w-full bg-zinc-900 border border-zinc-800 focus:border-purple-500/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors" />
+    className="w-full bg-zinc-900 border border-purple-800 focus:border-purple-500/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors" />
 );
 const Textarea = ({ value, onChange, placeholder, rows = 3 }) => (
   <textarea value={value} onChange={onChange} placeholder={placeholder} rows={rows}
-    className="w-full bg-zinc-900 border border-zinc-800 focus:border-purple-500/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors resize-none" />
+    className="w-full bg-zinc-900 border border-purple-800 focus:border-purple-500/60 rounded-lg px-3 py-2 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors resize-none" />
 );
 const SectionTitle = ({ children }) => (
   <h3 className="text-xs font-mono text-purple-400 tracking-widest uppercase mb-4 flex items-center gap-2">

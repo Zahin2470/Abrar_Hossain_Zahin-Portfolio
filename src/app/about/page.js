@@ -193,7 +193,7 @@ export default function About() {
           </h2>
           <div className="relative">
             <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/10 to-blue-600/10 blur-sm" />
-            <div className="relative bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6 sm:p-8">
+            <div className="relative bg-zinc-900/80 border border-purple-800 rounded-2xl p-6 sm:p-8">
               <SkillRadar />
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function About() {
           </h2>
           <div className="relative">
             <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-zinc-800/40 to-purple-900/10 blur-sm" />
-            <div className="relative bg-zinc-900/70 border border-zinc-800 rounded-2xl p-6 sm:p-8">
+            <div className="relative bg-zinc-900/70 border border-purple-800 rounded-2xl p-6 sm:p-8">
               <GitHubStats />
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function About() {
 
             {/* Social icon grid — takes 2 columns */}
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-2">
                 {socialLinks.map((s, i) => (
                   <motion.a key={s.label}
                     href={s.url} target="_blank" rel="noopener noreferrer"
@@ -235,7 +235,7 @@ export default function About() {
                     transition={{ delay: i * 0.05 }}
                     whileHover={{ y: -4, scale: 1.04 }}
                     whileTap={{ scale: 0.97 }}
-                    className="group flex flex-col items-center gap-2.5 py-5 px-3 bg-zinc-900/60 border border-zinc-800 hover:border-zinc-600 rounded-2xl transition-all duration-200 text-center"
+                    className="group flex flex-col items-center gap-2.5 py-5 px-3 bg-zinc-900/60 border border-purple-600 hover:border-zinc-600 rounded-2xl transition-all duration-200 text-center"
                   >
                     <div className="w-9 h-9 rounded-xl bg-zinc-800 group-hover:bg-purple-600/20 border border-zinc-700 group-hover:border-purple-500/40 flex items-center justify-center text-zinc-400 group-hover:text-purple-400 transition-all duration-200">
                       {icons[s.icon] ?? <span className="text-xs font-bold">{s.label[0]}</span>}

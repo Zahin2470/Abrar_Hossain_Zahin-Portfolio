@@ -191,7 +191,7 @@ export default function Chat() {
           className="flex-1 flex flex-col min-h-0">
 
           {/* Messages area */}
-          <div className="flex-1 bg-zinc-900/60 border border-zinc-800 rounded-2xl rounded-b-none p-4 sm:p-5 overflow-y-auto"
+          <div className="flex-1 bg-zinc-900/60 border border-purple-800 rounded-2xl rounded-b-none p-4 sm:p-5 overflow-y-auto"
             style={{ minHeight: "360px", maxHeight: "50vh" }}>
 
             {messages.map((msg, i) => <Bubble key={i} msg={msg} />)}
@@ -258,7 +258,7 @@ export default function Chat() {
           <div className="flex flex-wrap gap-2">
             {SUGGESTIONS.map((q) => (
               <button key={q} onClick={() => send(q)} disabled={loading}
-                className="text-xs font-mono px-3 py-1.5 bg-zinc-900/60 border border-zinc-800 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-300 rounded-lg transition-all duration-200 disabled:opacity-80 text-left">
+                className="text-xs font-mono px-3 py-1.5 bg-zinc-900/60 border border-purple-800 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-300 rounded-lg transition-all duration-200 disabled:opacity-80 text-left">
                 {q}
               </button>
             ))}

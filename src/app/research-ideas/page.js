@@ -291,7 +291,7 @@ export default function ResearchIdeas() {
                     className={`flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all duration-200 group ${
                       topic === preset.label
                         ? "border-purple-500/60 bg-purple-500/15 text-purple-300"
-                        : "border-zinc-800 hover:border-zinc-600 text-zinc-500 hover:text-zinc-300 bg-zinc-900/40"
+                        : "border-purple-800 hover:border-zinc-600 text-zinc-500 hover:text-zinc-300 bg-zinc-900/40"
                     }`}>
                     <span className="text-lg shrink-0 mt-0.5">{preset.icon}</span>
                     <div>
@@ -312,7 +312,7 @@ export default function ResearchIdeas() {
                   onChange={e => setTopic(e.target.value)}
                   onKeyDown={e => e.key === "Enter" && handleSubmit()}
                   placeholder="e.g. Vision Transformers for low-resolution images, Quantum ML, Neuromorphic computing..."
-                  className="w-full bg-zinc-900/80 border border-zinc-800 focus:border-purple-500/60 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors font-mono"
+                  className="w-full bg-zinc-900/80 border border-purple-800 focus:border-purple-500/60 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors font-mono"
                 />
               </div>
 

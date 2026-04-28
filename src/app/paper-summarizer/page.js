@@ -43,7 +43,7 @@ function LoadingDots() {
 const EXAMPLES = [
   {
     label: "Brain MRI (Zahin's paper)",
-    text: `TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI Tumor Classification. This paper proposes a self-supervised learning framework for classifying brain tumors from MRI scans while providing explainable AI (XAI) outputs. The model uses contrastive learning to pretrain on unlabeled MRI data, then fine-tunes on labeled tumor classes. Grad-CAM and SHAP are used to highlight which regions influenced the classification, making the model interpretable for clinical use. Results show 94.2% accuracy on the BraTS dataset, outperforming fully-supervised baselines with only 20% labeled data.`,
+    text: `TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI Tumor Classification. This paper proposes a self-supervised learning framework for classifying brain tumors from MRI scans while providing explainable AI (XAI) outputs. The model uses contrastive learning to pretrain on unlabeled MRI data, then fine-tunes on labeled tumor classes. Grad-CAM and SHAP are used to highlight which regions influenced the classification, making the model interpretable for clinical use. Results show 99.44% accuracy on the 17 Sub class MRI Brain Tumor Dataset, outperforming fully-supervised baselines with only limited labeled data.`,
   },
   {
     label: "Attention Is All You Need",
@@ -133,7 +133,7 @@ export default function PaperSummarizer() {
             <span className="text-xs font-mono text-zinc-500 self-center">Try example:</span>
             {EXAMPLES.map((ex) => (
               <button key={ex.label} onClick={() => loadExample(ex.text)}
-                className="text-xs font-mono px-3 py-1.5 border border-zinc-600 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-400 rounded-lg transition-all duration-200">
+                className="text-xs font-mono px-3 py-1.5 border border-purple-600 hover:border-purple-500/50 hover:bg-purple-500/10 text-zinc-500 hover:text-purple-400 rounded-lg transition-all duration-200">
                 {ex.label}
               </button>
             ))}
@@ -150,7 +150,7 @@ Example:
 TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI...
 Abstract: This paper proposes..."
               rows={7}
-              className="w-full bg-zinc-900/80 border border-zinc-800 focus:border-purple-500/60 rounded-2xl px-5 py-4 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors resize-none font-mono leading-relaxed"
+              className="w-full bg-zinc-900/80 border border-purple-800 focus:border-purple-500/60 rounded-2xl px-5 py-4 text-sm text-zinc-200 placeholder-zinc-700 outline-none transition-colors resize-none font-mono leading-relaxed"
             />
             <div className="absolute bottom-3 right-3 flex items-center gap-2">
               {input && (
