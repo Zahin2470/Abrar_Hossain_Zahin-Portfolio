@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 // countapi.mileshilliard.com
 // Same URL format, completely free, no account needed, no setup.
 const BASE = "https://countapi.mileshilliard.com/api/v1";
-const KEY  = "zahin-portfolio-visitors";   // unique key for your portfolio
+const KEY = "md-abrar-hossain-zahin-portfolio";
 
 export async function GET() {
   try {

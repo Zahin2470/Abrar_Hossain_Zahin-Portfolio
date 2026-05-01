@@ -160,7 +160,7 @@ export default function Projects() {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
           className="grid grid-cols-3 gap-4 mb-12">
           {[
-            { num: projects.length,                   label: "Total Projects",  color: "from-purple-400 to-fuchsia-400" },
+            { num: "10+",                   label: "Total Projects",  color: "from-purple-400 to-fuchsia-400" },
             { num: featured,                           label: "Featured",        color: "from-emerald-400 to-teal-400" },
             { num: Array.from(new Set(projects.flatMap(p => p.tags))).length, label: "Technologies", color: "from-blue-400 to-cyan-400" },
           ].map((s, i) => (

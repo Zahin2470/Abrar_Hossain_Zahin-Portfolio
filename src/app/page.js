@@ -501,11 +501,11 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="font-black leading-none mb-4 break-words 
-                          text-[1.65rem] 
-                          xs:text-[1.85rem] 
-                          sm:text-[2.05rem] 
-                          md:text-[2.25rem] 
-                          lg:text-[2.55rem] 
+                          text-[1.50rem] 
+                          xs:text-[1.80rem] 
+                          sm:text-[2.00rem] 
+                          md:text-[2.20rem] 
+                          lg:text-[2.60rem] 
                           tracking-[-0.03em]"
                 style={{ 
                   fontFamily: "'Syne', sans-serif",
