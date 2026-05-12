@@ -211,7 +211,7 @@ export default function StarCanvas() {
        SUN  (light mode only)
     ══════════════════════════════════════════════════════ */
     function drawSun(t) {
-      const sx = w * 0.92, sy = h * 0.21;
+      const sx = w * 0.89, sy = h * 0.18;
       const R  = Math.min(w, h) * 0.055;
       sunPulse     = Math.sin(t * 0.0012) * 0.5 + 0.5;
       sunRayAngle += 0.001;

@@ -27,7 +27,7 @@ const timeAgo = (iso) => {
 
 /* ── Skeleton loader ────────────────────────────────────── */
 function Skeleton({ className = "" }) {
-  return <div className={`animate-pulse bg-zinc-800/60 rounded-lg ${className}`} />;
+  return <span style={{ display: "block" }} className={`animate-pulse bg-zinc-800/60 rounded-lg ${className}`} />;
 }
 
 /* ── Stat pill ──────────────────────────────────────────── */
@@ -158,9 +158,9 @@ export default function GitHubStats() {
             </div>
           )}
           <div>
-            <p className="text-sm font-semibold text-zinc-100">
-              {loading ? <Skeleton className="w-28 h-4" /> : `@${USERNAME}`}
-            </p>
+            <div className="text-sm font-semibold text-zinc-100">
+              {loading ? <Skeleton className="w-28 h-4" /> : data?.profile.name || `@${USERNAME}`}
+           </div>
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[10px] font-mono text-zinc-600">Live Data</span>

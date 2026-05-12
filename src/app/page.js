@@ -192,7 +192,7 @@ function HeroOrb() {
 
       {/* Floating badges — Positioned closer to the larger orb boundaries */}
       {[
-        { label: "5+ Papers",    icon: "🔬", style: { top: "1%",   right: "-5%"  } },
+        { label: "5+ Papers",    icon: "🔬", style: { top: "1%",   left: "-5%"  } },
         { label: "10+ Projects", icon: "🚀", style: { bottom: "5%", left: "-10%"  } },
         { label: "EWU · CSE",   icon: "🎓", style: { bottom: "2%",  right: "-8%"  } },
       ].map((b, i) => (
@@ -504,8 +504,8 @@ export default function Home() {
                           text-[1.50rem] 
                           xs:text-[1.80rem] 
                           sm:text-[2.00rem] 
-                          md:text-[2.20rem] 
-                          lg:text-[2.60rem] 
+                          md:text-[2.10rem] 
+                          lg:text-[2.50rem] 
                           tracking-[-0.03em]"
                 style={{ 
                   fontFamily: "'Syne', sans-serif",
