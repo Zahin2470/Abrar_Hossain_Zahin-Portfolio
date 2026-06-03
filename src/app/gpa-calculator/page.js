@@ -2,6 +2,26 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/* ── Hex background — matches research page style ─────── */
+function HexBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg width="100%" height="100%" className="absolute inset-0 opacity-[0.04]">
+        <defs>
+          <pattern id="hex-gpa" x="0" y="0" width="56" height="48" patternUnits="userSpaceOnUse">
+            <polygon points="28,2 50,14 50,34 28,46 6,34 6,14"
+              fill="none" stroke="#34d399" strokeWidth="0.8"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-gpa)"/>
+      </svg>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-700/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-sky-700/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-cyan-700/8 rounded-full blur-3xl" />
+    </div>
+  );
+}
+
 /* ── EWU Grade Scale ─────────────────────────────────────── */
 const GRADE_SCALE = [
   { grade: "A+",  min: 80, max: 100, points: 4.00 },
@@ -140,19 +160,17 @@ export default function GPACalculator() {
   ];
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-20" style={{ overflowX:"hidden" }}>
-      <div className="absolute inset-0 pointer-events-none opacity-[0.025]"
-        style={{ backgroundImage:"linear-gradient(to right,#a855f7 1px,transparent 1px),linear-gradient(to bottom,#a855f7 1px,transparent 1px)", backgroundSize:"72px 72px" }} />
+    <div className="relative text-white min-h-screen pt-24 pb-20 overflow-hidden" style={{ background: "transparent" }}>
+      <HexBackground />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
         <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} className="mb-8">
-          <p className="text-xs font-mono text-emerald-400 tracking-widest uppercase mb-3">Academic Calculator</p>
           <h1 className="font-black leading-none mb-2"
-            style={{ fontSize:"clamp(2rem,3vw,3rem)", fontFamily:"'Syne',sans-serif", letterSpacing:"-0.03em" }}>
+            style={{ fontSize:"clamp(2rem,3vw,2.5rem)", fontFamily:"'Syne',sans-serif", letterSpacing:"-0.03em" }}>
             <span className="text-white">GPA & Grade </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Calculator</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Calculator</span>
           </h1>
           <p className="text-zinc-500 text-sm">East West University and Others Standard Grading Scale · Calculate GPA, CGPA, and Target Marks</p>
         </motion.div>
@@ -162,7 +180,7 @@ export default function GPACalculator() {
           {TABS.map(t => (
             <button key={t.id} onClick={() => setTab(t.id)}
               className={`px-4 py-2 rounded-lg text-xs font-mono transition-all duration-200 ${
-                tab === t.id ? "bg-emerald-600 text-white" : "text-zinc-500 hover:text-zinc-300"
+                tab === t.id ? "bg-purple-600 text-white" : "text-zinc-500 hover:text-zinc-300"
               }`}>
               {t.id === tab && "▸ "}{t.label}
             </button>

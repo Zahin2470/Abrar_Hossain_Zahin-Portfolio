@@ -7,6 +7,26 @@ import {
   Tooltip, Legend, ResponsiveContainer,
 } from "recharts";
 
+/* ── Hex background — matches research page style ─────── */
+function HexBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg width="100%" height="100%" className="absolute inset-0 opacity-[0.04]">
+        <defs>
+          <pattern id="hex-data" x="0" y="0" width="56" height="48" patternUnits="userSpaceOnUse">
+            <polygon points="28,2 50,14 50,34 28,46 6,34 6,14"
+              fill="none" stroke="#3b82f6" strokeWidth="0.8"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-data)"/>
+      </svg>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-700/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-700/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-teal-700/8 rounded-full blur-3xl" />
+    </div>
+  );
+}
+
 /* ── Color palette ───────────────────────────────────────── */
 const COLORS = [
   "#a855f7","#3b82f6","#10b981","#f59e0b","#ef4444",
@@ -175,25 +195,24 @@ Dec,95000,55000,40000`;
   };
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-20" style={{ overflowX:"hidden" }}>
-      <div className="absolute inset-0 pointer-events-none opacity-[0.025]"
-        style={{ backgroundImage:"linear-gradient(to right,#a855f7 1px,transparent 1px),linear-gradient(to bottom,#a855f7 1px,transparent 1px)", backgroundSize:"72px 72px" }} />
+    <div className="relative text-white min-h-screen pt-24 pb-20 overflow-hidden" style={{ background: "transparent" }}>
+      <HexBackground />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
         <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-lg">📊</div>
-            <p className="text-xs font-mono text-blue-400 tracking-widest uppercase">Data Visualizer</p>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-600 flex items-center justify-center text-lg">📊</div>
+            <p className="text-xs font-mono text-purple-400 tracking-widest uppercase">Data Visualizer</p>
           </div>
           <h1 className="font-black leading-none mb-2"
             style={{ fontSize:"clamp(2rem,3vw,3rem)", fontFamily:"'Syne',sans-serif", letterSpacing:"-0.03em" }}>
             <span className="text-white">Data </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Visualizer</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Visualizer</span>
           </h1>
           <p className="text-zinc-400 text-sm leading-relaxed">
-            Upload a CSV file → instant charts, statistics, and export. No backend, no account.
+            Upload a CSV File → Instant Charts, Statistics, and Export. No Account.
           </p>
         </motion.div>
 
@@ -207,7 +226,7 @@ Dec,95000,55000,40000`;
               onClick={() => fileRef.current?.click()}
               className={`relative border-2 border-dashed rounded-2xl p-16 text-center cursor-pointer transition-all duration-300 ${
                 dragging
-                  ? "border-blue-500 bg-blue-500/10"
+                  ? "border-purple-500 bg-blue-500/10"
                   : "border-zinc-700 hover:border-zinc-500 bg-zinc-900/40 hover:bg-zinc-900/60"
               }`}
             >
@@ -217,7 +236,7 @@ Dec,95000,55000,40000`;
               <p className="text-lg font-semibold text-zinc-200 mb-2">Drop your CSV file here</p>
               <p className="text-sm text-zinc-500 mb-6">or click to browse · supports .csv files</p>
               <button onClick={e => { e.stopPropagation(); loadSample(); }}
-                className="px-5 py-2 rounded-xl border border-zinc-700 hover:border-blue-500/50 text-xs font-mono text-zinc-400 hover:text-blue-400 transition-all">
+                className="px-5 py-2 rounded-xl border border-zinc-700 hover:border-purple-500/50 text-xs font-mono text-zinc-400 hover:text-blue-400 transition-all">
                 Load Sample Data (Monthly Revenue)
               </button>
             </div>
@@ -245,7 +264,7 @@ Dec,95000,55000,40000`;
                   Export CSV
                 </button>
                 <button onClick={exportChart}
-                  className="text-xs font-mono px-3 py-1.5 border border-zinc-700 hover:border-blue-500/50 text-zinc-400 hover:text-blue-400 rounded-lg transition-all">
+                  className="text-xs font-mono px-3 py-1.5 border border-zinc-700 hover:border-purple-500/50 text-zinc-400 hover:text-blue-400 rounded-lg transition-all">
                   Export SVG
                 </button>
                 <button onClick={() => setData(null)}
@@ -268,7 +287,7 @@ Dec,95000,55000,40000`;
                       <button key={ct.id} onClick={() => setChart(ct.id)}
                         className={`flex flex-col items-center gap-1 p-2 rounded-xl border text-xs font-mono transition-all ${
                           chart === ct.id
-                            ? "border-blue-500/60 bg-blue-500/15 text-blue-300"
+                            ? "border-purple-500/60 bg-purple-500/15 text-blue-300"
                             : "border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
                         }`}>
                         <span className="text-lg">{ct.icon}</span>
@@ -319,7 +338,7 @@ Dec,95000,55000,40000`;
                   {["chart","stats","table"].map(t => (
                     <button key={t} onClick={() => setTab(t)}
                       className={`px-4 py-1.5 rounded-lg text-xs font-mono transition-all ${
-                        tab === t ? "bg-blue-600 text-white" : "text-zinc-500 hover:text-zinc-300"
+                        tab === t ? "bg-purple-600 text-white" : "text-zinc-500 hover:text-zinc-300"
                       }`}>
                       {t === "chart" ? "📈 Chart" : t === "stats" ? "📐 Statistics" : "🗂 Table"}
                     </button>

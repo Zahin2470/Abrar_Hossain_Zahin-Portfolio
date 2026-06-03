@@ -2,6 +2,27 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
+/* ── Hex background — matches research page style ─────── */
+function HexBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg width="100%" height="100%" className="absolute inset-0 opacity-[0.04]">
+        <defs>
+          <pattern id="hex-cs" x="0" y="0" width="56" height="48" patternUnits="userSpaceOnUse">
+            <polygon points="28,2 50,14 50,34 28,46 6,34 6,14"
+              fill="none" stroke="#a855f7" strokeWidth="0.8"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-cs)"/>
+      </svg>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-700/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-fuchsia-700/8 rounded-full blur-3xl" />
+    </div>
+  );
+}
+
 /* ── Zahin's actual research papers as case studies ─────── */
 const CASE_STUDIES = [
   {
@@ -133,7 +154,7 @@ function CaseStudyCard({ cs, isOpen, onToggle }) {
       <div className={`absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 bg-gradient-to-br ${cs.gradient}`} />
 
       <div className={`relative bg-zinc-900/80 border rounded-2xl overflow-hidden transition-colors duration-300 ${
-        isOpen ? "border-zinc-600" : "border-zinc-800 hover:border-zinc-700"
+        isOpen ? "border-purple-500/60" : "border-purple-800 hover:border-zinc-600"
       }`}>
 
         {/* Card Header — always visible */}
@@ -263,10 +284,8 @@ export default function CaseStudies() {
   const toggle = (id) => setOpenId(prev => prev === id ? null : id);
 
   return (
-    <div className="relative bg-zinc-950 text-white min-h-screen pt-24 pb-20" style={{ overflowX:"hidden" }}>
-      <div className="absolute inset-0 pointer-events-none opacity-[0.025]"
-        style={{ backgroundImage:"linear-gradient(to right,#a855f7 1px,transparent 1px),linear-gradient(to bottom,#a855f7 1px,transparent 1px)", backgroundSize:"72px 72px" }} />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-700/8 rounded-full blur-3xl pointer-events-none" />
+    <div className="relative text-white min-h-screen pt-24 pb-20 overflow-hidden" style={{ background: "transparent" }}>
+      <HexBackground />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
 
@@ -276,10 +295,10 @@ export default function CaseStudies() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-lg shadow-lg">
               🔬
             </div>
-            <p className="text-xs font-mono text-purple-400 tracking-widest uppercase"> Interactive_Case_Studies</p>
+            <p className="text-xs font-mono text-purple-400 tracking-widest uppercase"> Interactive Case Studies</p>
           </div>
           <h1 className="font-black leading-none mb-3"
-            style={{ fontSize:"clamp(2rem,3vw,3rem)", fontFamily:"'Syne',sans-serif", letterSpacing:"-0.03em" }}>
+            style={{ fontSize: "clamp(2rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
             <span className="text-white">Research </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Case Studies</span>
           </h1>
