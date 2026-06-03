@@ -273,9 +273,6 @@ npm run dev
 
 <div align="center">
 
-```
-Built with Next.js · Tailwind CSS · Framer Motion · Groq AI · Canvas API
-```
 
 **© 2026 Abrar Hossain Zahin · MIT License**
 
