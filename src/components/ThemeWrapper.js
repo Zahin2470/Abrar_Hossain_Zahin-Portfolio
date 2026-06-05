@@ -14,8 +14,8 @@ export default function ThemeWrapper({ children }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setDark(saved ? saved === "dark" : prefersDark);
+    // const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setDark(saved ? saved === "dark" : true);
   }, []);
 
   useEffect(() => {

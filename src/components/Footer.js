@@ -7,7 +7,7 @@ export default function Footer() {
                        bg-white dark:bg-zinc-950
                        text-zinc-400 dark:text-zinc-500
                        transition-colors duration-300">
-      © {new Date().getFullYear()} {siteConfig.name} &amp; ♡
+      © {new Date().getFullYear()} {siteConfig.name}{" & "}♡
     </footer>
   );
 }

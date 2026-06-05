@@ -42,10 +42,8 @@ export default function About() {
           className="mb-16">
           <h1 className="font-black leading-none mb-5"
             style={{ fontSize: "clamp(3rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.04em" }}>
-            <span className="block text-white">About</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">
-              Me
-            </span>
+                        <span className="text-white">About </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Me</span>
           </h1>
           <p className="text-zinc-400 max-w-2xl leading-relaxed text-lg">{siteConfig.bio}</p>
         </motion.div>

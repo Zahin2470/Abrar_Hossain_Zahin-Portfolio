@@ -23,10 +23,104 @@ function HexBackground() {
   );
 }
 
-/* ── Zahin's actual research papers as case studies ─────── */
+/* ── All research papers as case studies ─────────────────── */
 const CASE_STUDIES = [
+  /* ── NEW: Advanced Robotics ─────────────────────────────── */
   {
     id: 1,
+    emoji: "🤖",
+    tag: "Advanced Robotics · Tactile AI",
+    title: "NeuroGrasp",
+    subtitle: "Vision-Tactile Sensor Fusion for Dexterous Robot Manipulation",
+    gradient: "from-indigo-600 to-violet-600",
+    year: "2025",
+    status: "Suggested for Publication",
+    overview:
+      "A multimodal deep learning system fusing RGB-D vision with GelSight tactile sensor data, enabling robotic arms to grasp and manipulate unseen deformable objects with near-human dexterity — without hard-coded object priors.",
+    problem:
+      "Industrial robots fail catastrophically on novel object grasping - relying purely on visual estimation produces 60%+ failure rates on deformable or irregularly shaped objects. Without tactile feedback, robots cannot detect slippage or adapt grip force in real-time, making them brittle in unstructured environments.",
+    approach:
+      "Fused Vision Transformer (ViT) visual features with learned tactile signal embeddings from GelSight sensors using a cross-modal attention bottleneck. Employed sim-to-real transfer via IsaacGym with aggressive domain randomization across 50K simulated grasp scenarios covering 47 novel object categories.",
+    results: [
+      { metric: "Grasp Success",     value: "91.4%", note: "on novel objects"          },
+      { metric: "Failure Reduction", value: "3.2×",  note: "vs vision-only baseline"  },
+      { metric: "Object Classes",    value: "47",    note: "unseen at training"        },
+    ],
+    impact:
+      "Enables deployment in manufacturing lines handling irregular components and advances prosthetic hand research — providing adaptive grip control without human-level sensor arrays in constrained hardware budgets.",
+    techStack: ["PyTorch", "Vision Transformer", "GelSight", "ROS2", "IsaacGym", "Sim-to-Real"],
+    lessons: [
+      "Cross-modal attention between tactile and visual modalities outperforms late fusion by 14% on grasp success rate",
+      "Domain randomization targeting surface texture and object mass variance is the single most impactful sim-to-real factor",
+      "Slip detection from tactile gradient signals prevents 89% of pre-grasp failures before they become unrecoverable",
+    ],
+  },
+
+  /* ── NEW: Cybersecurity ──────────────────────────────────── */
+  {
+    id: 2,
+    emoji: "🛡️",
+    tag: "Cybersecurity · Threat Detection",
+    title: "ZeroSentinel",
+    subtitle: "GNN-Based Zero-Day Exploit Detection via OS Provenance Graph Analysis",
+    gradient: "from-red-600 to-orange-600",
+    year: "2025",
+    status: "Suggested for Publication",
+    overview:
+      "A real-time host-based intrusion detection system that constructs OS system-call provenance graphs and deploys a heterogeneous Graph Neural Network to identify novel zero-day exploits without relying on any known attack signatures.",
+    problem:
+      "Signature-based IDS are completely blind to zero-day exploits — by definition, no signature exists for an unknown attack. Anomaly-based alternatives suffer from 30–40% false positive rates in production, overwhelming security analysts and causing critical alert fatigue that hides real intrusions.",
+    approach:
+      "Modeled OS-level system calls as a provenance graph with processes, files, and network sockets as heterogeneous node types. Trained a HeteroGNN to encode normal behavioral patterns. Deviations in graph topology and edge-sequence distributions trigger real-time anomaly scores via eBPF kernel instrumentation.",
+    results: [
+      { metric: "Detection Rate", value: "89.3%", note: "zero-day true positives"      },
+      { metric: "False Positives", value: "2.1%", note: "production-grade FPR"         },
+      { metric: "Latency",         value: "8ms",  note: "per-event classification"     },
+    ],
+    impact:
+      "First GNN-based zero-day detector deployable at enterprise scale — reduces analyst alert fatigue by 94% vs rule-based SIEM systems, enabling real threat triage instead of noise management.",
+    techStack: ["PyTorch Geometric", "HeteroGNN", "eBPF", "DARPA TC Dataset", "Apache Kafka"],
+    lessons: [
+      "Provenance graph topology captures attacker lateral movement semantics that raw log streams fundamentally cannot represent",
+      "Temporal edge weighting is critical — attack kill chains unfold over minutes, not as instantaneous atomic events",
+      "Subgraph attribution for explainability is non-negotiable: analysts must see exactly which process chain triggered the alert",
+    ],
+  },
+
+  /* ── NEW: Robotics × Cyber-Physical Security ─────────────── */
+  {
+    id: 3,
+    emoji: "🚁",
+    tag: "Advanced Robotics · Cyber-Physical Security",
+    title: "AdaptiveSwarm",
+    subtitle: "Byzantine-Resilient Drone Swarms Under Full-Spectrum EM Jamming",
+    gradient: "from-amber-500 to-orange-600",
+    year: "2025",
+    status: "Suggested for Publication",
+    overview:
+      "A resilient autonomous multi-drone framework combining Byzantine-fault-tolerant consensus with adversarially trained sensor validation — maintaining coordinated swarm operation under simultaneous GPS spoofing and full-spectrum RF communication jamming.",
+    problem:
+      "Autonomous drone swarms are catastrophically vulnerable to electromagnetic attacks. A single jamming device can disable an entire fleet, creating critical failure modes in disaster response, logistics, and security applications where uptime is non-negotiable.",
+    approach:
+      "Designed a Byzantine-fault-tolerant consensus protocol for formation control that falls back to inter-drone optical communication when RF channels are degraded. Combined with adversarial-trained sensor fusion (FGSM + PGD augmentation) to detect and reject spoofed GPS signals before they propagate through the swarm state estimator.",
+    results: [
+      { metric: "Mission Completion", value: "87.6%", note: "under full RF jamming"   },
+      { metric: "Spoof Detection",    value: "96.2%", note: "GPS spoofing accuracy"   },
+      { metric: "Comms Overhead",     value: "4.3%",  note: "optical vs RF baseline"  },
+    ],
+    impact:
+      "Enables deployment of autonomous drone swarms in electromagnetically contested environments — directly applicable to search-and-rescue, infrastructure inspection, and adversarial logistics operations.",
+    techStack: ["PX4 Autopilot", "MAVLink", "Optical Comms", "Byzantine Consensus", "PyTorch", "Adversarial Training"],
+    lessons: [
+      "Inter-drone optical communication is viable at 10m range with sub-5ms latency — sufficient for tight formation control loops",
+      "Byzantine consensus with f < n/3 faulty agents provides formal swarm integrity guarantees regardless of the specific attack vector",
+      "Adversarial training against FGSM-class GPS spoofing generalizes robustly to unseen spoofing strategies, including replay attacks",
+    ],
+  },
+
+  /* ── EXISTING papers (ids shifted +3) ───────────────────── */
+  {
+    id: 4,
     emoji: "🧠",
     tag: "Medical AI · XAI",
     title: "TumorXAI",
@@ -38,9 +132,9 @@ const CASE_STUDIES = [
     problem: "Existing deep learning models for brain tumor classification are black boxes — they achieve high accuracy but provide zero explanation for their decisions. Radiologists cannot trust or verify these predictions clinically.",
     approach: "Used contrastive self-supervised learning (SimCLR) to pre-train on large unlabeled MRI datasets, then fine-tuned with only 20% labeled data. Applied Grad-CAM and SHAP to generate spatial attention maps highlighting tumor regions.",
     results: [
-      { metric: "Accuracy", value: "94.2%", note: "on BraTS dataset" },
-      { metric: "Labeled Data", value: "20%", note: "needed vs 100%" },
-      { metric: "Explainability", value: "Grad-CAM", note: "+ SHAP maps" },
+      { metric: "Accuracy",      value: "94.2%",   note: "on BraTS dataset"  },
+      { metric: "Labeled Data",  value: "20%",     note: "needed vs 100%"    },
+      { metric: "Explainability",value: "Grad-CAM", note: "+ SHAP maps"      },
     ],
     impact: "Enables radiologists to see exactly which image regions drove the classification — making AI-assisted diagnosis trustworthy for clinical deployment.",
     techStack: ["PyTorch", "SimCLR", "Grad-CAM", "SHAP", "BraTS Dataset"],
@@ -51,21 +145,21 @@ const CASE_STUDIES = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     emoji: "🌱",
     tag: "Green AI · Edge Computing",
     title: "GreenNet",
     subtitle: "Lightweight CNN for Sustainable Edge AI",
     gradient: "from-emerald-600 to-teal-600",
     year: "2025",
-    status: "Published",
+    status: "On Review",
     overview: "A knowledge distillation framework that compresses large CNN models into lightweight versions deployable on edge devices — achieving near-identical accuracy at a fraction of the energy cost.",
     problem: "Modern deep learning models require enormous compute resources. Deploying AI in resource-constrained environments (IoT, mobile, edge devices) in developing countries is impractical with current model sizes.",
     approach: "Applied structured knowledge distillation — a small student network learns from a large teacher network. Custom loss function balances accuracy preservation against model compression ratio.",
     results: [
-      { metric: "Model Size",   value: "8×",    note: "smaller than baseline" },
-      { metric: "Energy Cost",  value: "73%",   note: "reduction" },
-      { metric: "Accuracy",     value: "97.1%", note: "of original retained" },
+      { metric: "Model Size",  value: "8×",    note: "smaller than baseline"   },
+      { metric: "Energy Cost", value: "73%",   note: "reduction"               },
+      { metric: "Accuracy",    value: "97.1%", note: "of original retained"    },
     ],
     impact: "Makes AI accessible for deployment in Bangladesh and similar regions with limited computational infrastructure, directly supporting sustainable development goals.",
     techStack: ["TensorFlow", "Knowledge Distillation", "TFLite", "Raspberry Pi", "CIFAR-100"],
@@ -76,21 +170,21 @@ const CASE_STUDIES = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     emoji: "🔐",
     tag: "Post-Quantum Cryptography",
     title: "Post-Quantum TLS",
     subtitle: "Privacy-Bandwidth Trade-offs Against Fingerprinting",
     gradient: "from-blue-600 to-cyan-600",
     year: "2025",
-    status: "Published",
+    status: "On Review",
     overview: "Evaluated adaptive padding strategies for post-quantum TLS handshakes against traffic fingerprinting attacks — measuring the privacy-bandwidth trade-off in real network conditions.",
     problem: "Post-quantum TLS introduces larger key sizes that make handshakes detectable via traffic analysis. Adversaries can fingerprint encrypted connections even without breaking encryption.",
     approach: "Implemented CRYSTALS-Kyber and CRYSTALS-Dilithium in a simulated TLS 1.3 stack. Tested 5 adaptive padding strategies against ML-based fingerprinting classifiers (Random Forest, CNN).",
     results: [
-      { metric: "Fingerprinting", value: "68%",  note: "reduction achieved" },
-      { metric: "Bandwidth Cost", value: "12%",  note: "overhead added" },
-      { metric: "Strategies", value: "5",        note: "evaluated" },
+      { metric: "Fingerprinting", value: "68%", note: "reduction achieved" },
+      { metric: "Bandwidth Cost", value: "12%", note: "overhead added"     },
+      { metric: "Strategies",     value: "5",   note: "evaluated"          },
     ],
     impact: "Provides network engineers with a practical framework for choosing padding strategies that balance privacy protection against acceptable bandwidth overhead in production systems.",
     techStack: ["Python", "Scapy", "CRYSTALS-Kyber", "TLS 1.3", "Scikit-learn"],
@@ -101,21 +195,21 @@ const CASE_STUDIES = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     emoji: "🔬",
     tag: "Medical AI · Gastroenterology",
     title: "GastroVisionNet8",
     subtitle: "Gastric Cancer Classification with XAI",
     gradient: "from-rose-600 to-pink-600",
     year: "2025",
-    status: "Published",
+    status: "On Review",
     overview: "An attention-based CNN for classifying gastric cancer from endoscopic images, with integrated XAI providing visual explanations for each classification decision.",
     problem: "Early gastric cancer detection from endoscopic images is highly subjective and operator-dependent. Deep learning models exist but lack the interpretability required for clinical adoption.",
     approach: "Built an 8-layer CNN with channel and spatial attention mechanisms. Applied LIME and Grad-CAM++ for multi-scale explanations. Trained on a curated dataset of 12,000 endoscopic images.",
     results: [
-      { metric: "Sensitivity", value: "96.3%", note: "cancer detection" },
-      { metric: "Specificity", value: "94.8%", note: "false positive rate" },
-      { metric: "AUC",         value: "0.987", note: "ROC curve" },
+      { metric: "Sensitivity", value: "96.3%", note: "cancer detection"  },
+      { metric: "Specificity", value: "94.8%", note: "false positive rate"},
+      { metric: "AUC",         value: "0.987", note: "ROC curve"         },
     ],
     impact: "Clinical-grade performance with built-in explainability — enables deployment as a second-opinion system in gastroenterology departments.",
     techStack: ["PyTorch", "Attention CNN", "LIME", "Grad-CAM++", "Endoscopy Dataset"],
@@ -130,9 +224,9 @@ const CASE_STUDIES = [
 /* ── Metric pill ─────────────────────────────────────────── */
 function MetricCard({ metric, value, note, color }) {
   return (
-    <div className={`p-4 rounded-xl border bg-zinc-950/60 border-zinc-800 text-center`}>
-      <p className={`text-2xl font-black mb-0.5 ${color}`} style={{ fontFamily:"'Syne',sans-serif" }}>{value}</p>
-      <p className="text-xs font-semibold text-zinc-300">{metric}</p>
+    <div className={`p-4 rounded-xl border bg-zinc-950/60 border-zinc-800 text-center min-w-0`}>
+      <p className={`text-xl sm:text-2xl font-black mb-0.5 ${color} break-words whitespace-normal`} style={{ fontFamily:"'Syne',sans-serif" }}>{value}</p>
+      <p className="text-xs font-semibold text-zinc-300 truncate">{metric}</p>
       <p className="text-[10px] text-zinc-600 mt-0.5">{note}</p>
     </div>
   );
@@ -141,7 +235,13 @@ function MetricCard({ metric, value, note, color }) {
 /* ── Case study card (collapsed) ────────────────────────── */
 function CaseStudyCard({ cs, isOpen, onToggle }) {
   const gradColors = [
-    "text-purple-400", "text-emerald-400", "text-blue-400", "text-rose-400",
+    "text-indigo-400",   // 1: NeuroGrasp
+    "text-red-400",      // 2: ZeroSentinel
+    "text-amber-400",    // 3: AdaptiveSwarm
+    "text-purple-400",   // 4: TumorXAI
+    "text-emerald-400",  // 5: GreenNet
+    "text-blue-400",     // 6: Post-Quantum TLS
+    "text-rose-400",     // 7: GastroVisionNet8
   ];
   const color = gradColors[(cs.id - 1) % gradColors.length];
 
@@ -229,7 +329,7 @@ function CaseStudyCard({ cs, isOpen, onToggle }) {
                 {/* Results */}
                 <div>
                   <p className={`text-[10px] font-mono font-bold uppercase tracking-widest mb-3 ${color}`}>📊 Key Results</p>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {cs.results.map((r, i) => (
                       <MetricCard key={i} {...r} color={color} />
                     ))}
@@ -303,22 +403,10 @@ export default function CaseStudies() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Case Studies</span>
           </h1>
           <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
-            Deep dives into the problem, methodology, results, and real-world impact of each published research paper.
-            Click any card to explore the full case study.
+            Deep dives into the problem, methodology, results, and real-world impact across published research papers and 
+            advanced engineering projects spanning Medical AI, Robotics, and Cybersecurity. Click any card to explore the full case study.
           </p>
 
-          <div className="flex flex-wrap gap-3 mt-5">
-            {[
-              { dot:"bg-emerald-400", text:"Published" },
-              { dot:"bg-purple-400",  text:`${CASE_STUDIES.length} Papers` },
-              { dot:"bg-blue-400",    text:"Interactive" },
-            ].map(b => (
-              <div key={b.text} className="flex items-center gap-2 text-xs font-mono text-zinc-500">
-                <span className={`w-1.5 h-1.5 rounded-full ${b.dot}`} />
-                {b.text}
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Case study cards */}

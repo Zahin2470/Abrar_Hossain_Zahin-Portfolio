@@ -529,7 +529,7 @@ export default function ResumeBuilder() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
-              <h1 className="font-black leading-none mb-2"
+              <h1 className="font-black leading-none mb-2 mt-4"
                 style={{ fontSize: "clamp(2rem,3vw,2.5rem)", fontFamily: "'Syne',sans-serif", letterSpacing: "-0.03em" }}>
                 <span className="text-white">Resume </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Builder</span>

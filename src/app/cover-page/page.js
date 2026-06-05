@@ -412,7 +412,7 @@ export default function CoverPageBuilder() {
               <div className="border-t border-zinc-800 pt-5">
                 <p className="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-4">Submitted To</p>
                 <div className="space-y-3">
-                  <div><Label>Teacher Name *</Label><Input value={data.teacherName} onChange={e => set("teacherName", e.target.value)} placeholder="Md Sabbir Hossain" /></div>
+                  <div><Label>Teacher Name *</Label><Input value={data.teacherName} onChange={e => set("teacherName", e.target.value)} placeholder="Md Abrar Hossain" /></div>
                   <div><Label>Designation</Label><Input value={data.teacherDesignation} onChange={e => set("teacherDesignation", e.target.value)} placeholder="Lecturer" /></div>
                 </div>
               </div>
