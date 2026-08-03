@@ -127,7 +127,7 @@ export async function GET() {
             fontWeight: 600, letterSpacing: "3px",
             textTransform: "uppercase", marginBottom: 28,
           }}>
-            AI & ML Engineer · Researcher · Builder
+            Full Stack AI Engineer · Researcher · Builder
           </div>
 
           {/* Divider */}

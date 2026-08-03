@@ -14,15 +14,15 @@ const EMPTY = {
 };
 
 const SAMPLE = {
-  name: "Abrar Hossain Zahin", title: "AI & ML Engineer",
+  name: "Abrar Hossain Zahin", title: "Full Stack AI Engineer",
   email: "abrarhossain1200@gmail.com", phone: "+880 1XXX-XXXXXX",
   location: "Dhaka, Bangladesh",
   linkedin: "linkedin.com/in/md-abrar-hossain-zahin",
   github: "github.com/Zahin2470",
   website: "abrar-hossain-zahin-portfolio.vercel.app",
-  summary: "Passionate AI/ML Engineer and researcher at East West University. Experienced in Deep Learning, NLP, Computer Vision and Explainable AI. Published researcher in medical imaging, green computing, and post-quantum cryptography.",
-  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – Present", gpa: "3.8/4.0", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
-  experience: [{ role: "AI/ML Research Student", company: "East West University", period: "2022 – Present", bullets: "Published 6+ research papers in medical AI, green computing and cryptography\nBuilt TumorXAI: explainable brain MRI tumor classifier using self-supervised learning\nDeveloped GreenNet: lightweight CNN with knowledge distillation for edge AI" }],
+  summary: "Passionate Full Stack AI Engineer and researcher at East West University. Experienced in Deep Learning, NLP, Computer Vision and Explainable AI. Published researcher in medical imaging, green computing, and post-quantum cryptography.",
+  education: [{ degree: "B.Sc. Computer Science & Engineering", institution: "East West University", period: "2022 – 2026", gpa: "3.76/4.0", details: "Focus: Machine Learning, Deep Learning, NLP, Computer Vision, XAI" }],
+  experience: [{ role: "Full Stack AI Research Student", company: "East West University", period: "2022 – 2026", bullets: "Published 6+ research papers in medical AI, green computing and cryptography\nBuilt TumorXAI: explainable brain MRI tumor classifier using self-supervised learning\nDeveloped GreenNet: lightweight CNN with knowledge distillation for edge AI" }],
   skills: [
     { category: "AI / ML", items: "Python, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, HuggingFace" },
     { category: "Web", items: "TypeScript, React, Next.js, Tailwind CSS, Node.js" },
@@ -613,7 +613,7 @@ export default function ResumeBuilder() {
                       <SectionTitle>Personal Information</SectionTitle>
                       <div className="grid sm:grid-cols-2 gap-3">
                         <div><Label>Full Name *</Label><Input value={data.name} onChange={e => set("name", e.target.value)} placeholder="Abrar Hossain Zahin" /></div>
-                        <div><Label>Professional Title</Label><Input value={data.title} onChange={e => set("title", e.target.value)} placeholder="AI & ML Engineer" /></div>
+                        <div><Label>Professional Title</Label><Input value={data.title} onChange={e => set("title", e.target.value)} placeholder="Full Stack AI Engineer" /></div>
                         <div><Label>Email *</Label><Input value={data.email} onChange={e => set("email", e.target.value)} placeholder="you@email.com" /></div>
                         <div><Label>Phone</Label><Input value={data.phone} onChange={e => set("phone", e.target.value)} placeholder="+880 1XXX-XXXXXX" /></div>
                         <div><Label>Location</Label><Input value={data.location} onChange={e => set("location", e.target.value)} placeholder="Dhaka, Bangladesh" /></div>
@@ -629,7 +629,7 @@ export default function ResumeBuilder() {
                       <SectionTitle>Professional Summary</SectionTitle>
                       <p className="text-xs text-zinc-600 font-mono mb-3">2–4 sentences about your expertise and goals.</p>
                       <Textarea value={data.summary} onChange={e => set("summary", e.target.value)}
-                        placeholder="Passionate AI/ML engineer with expertise in deep learning and computer vision..." rows={6} />
+                        placeholder="Passionate Full Stack AI engineer with expertise in deep learning and computer vision..." rows={6} />
                       <p className="text-xs text-zinc-700 mt-2 font-mono">{data.summary.length} chars</p>
                     </div>
                   )}

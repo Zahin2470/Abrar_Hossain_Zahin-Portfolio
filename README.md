@@ -11,7 +11,7 @@
 ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
 </pre>
 
-### `Abrar Hossain Zahin` · AI & ML Engineer · Researcher · Builder
+### `Abrar Hossain Zahin` · Full Stack AI Engineer · Researcher · Builder
 ### *B.Sc. Computer Science & Engineering · East West University, Dhaka*
 
 <br/>
@@ -181,7 +181,7 @@ zahin-portfolio/
 │       └── data.js                    # ⭐ SINGLE SOURCE OF TRUTH — edit once, all pages update
 │
 ├── public/
-│   ├── images/profile/developer-pic-1.png   # ← add your photo here
+│   ├── images/profile/developer-pic-1.png    # ← add your photo here
 │   └── resume.pdf                            # ← add your CV here
 │
 ├── package.json
@@ -210,7 +210,7 @@ Replace the generated `src/` folder with the files from this repo.
 
 ```
 public/
-├── images/profile/developer-pic-1.png   ← your profile photo
+├── images/profile/developer-pic-1.png    ← your profile photo
 └── resume.pdf                            ← your CV
 ```
 
@@ -276,6 +276,6 @@ npm run dev
 
 **© 2026 Abrar Hossain Zahin · MIT License**
 
-*Open to research collaborations, internships, and exciting AI/ML projects*
+*Open to research collaborations, internships, and exciting Full Stack AI/ML projects*
 
 </div>

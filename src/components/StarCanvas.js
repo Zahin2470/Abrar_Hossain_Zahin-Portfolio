@@ -10,7 +10,7 @@ export default function StarCanvas() {
     const ctx = canvas.getContext("2d");
 
     let w, h, stars = [], shooters = [], bolts = [];
-    let nextShoot = 4000, nextBolt = 3000 + Math.random() * 4000;
+    let nextShoot = 4000, nextBolt = 8000 + Math.random() * 10000;
     let mx = -9999, my = -9999;
     let raf;
     let sunRayAngle = 0;
@@ -532,11 +532,11 @@ export default function StarCanvas() {
       rainActive  = true;
       initRain();
 
-      // After 2.5 seconds begin fade-out (reduced rain duration)
+      // After 8 seconds begin fade-out (reduced rain duration)
       rainTimer = setTimeout(() => {
         rainFadeOut = true;
         rainTimer = null;
-      }, 2500);
+      }, 8000);
     }
 
     function drawRain() {
@@ -645,7 +645,7 @@ export default function StarCanvas() {
         if(nextBolt<=0){
           bolts.push(spawnBolt());
           // Increase time between thunder (lightning) events
-          nextBolt=5000+Math.random()*7000;
+          nextBolt=10000+Math.random()*15000;
         }
         for(let i=bolts.length-1;i>=0;i--){
           const b=bolts[i];b.life++;

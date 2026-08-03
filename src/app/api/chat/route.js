@@ -10,7 +10,7 @@ Here is everything you know about Zahin:
 
 ## Personal
 - Full name: Abrar Hossain Zahin
-- Role: Aspiring AI & ML Engineer, Researcher
+- Role: Aspiring Full Stack AI Engineer, Researcher
 - University: East West University, Dhaka, Bangladesh
 - Degree: B.Sc. Computer Science and Engineering (2022 – Present)
 - Location: Dhaka, Bangladesh

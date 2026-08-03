@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="50%"  stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Subtle inner border -->
+  <rect x="2" y="2" width="60" height="60" rx="12"
+        fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="1.5"/>
+
+  <!-- "A" letter — left side -->
+  <text x="11" y="44"
+        font-family="'Syne', 'Arial Black', sans-serif"
+        font-weight="900"
+        font-size="34"
+        fill="white"
+        letter-spacing="-2">A</text>
+
+  <!-- "Z" letter — right side, gold -->
+  <text x="33" y="44"
+        font-family="'Syne', 'Arial Black', sans-serif"
+        font-weight="900"
+        font-size="34"
+        fill="url(#gold)"
+        letter-spacing="-2">Z</text>
+
+  <!-- Gold underline accent -->
+  <rect x="10" y="49" width="44" height="2.5" rx="1.25" fill="url(#gold)" opacity="0.7"/>
+</svg>

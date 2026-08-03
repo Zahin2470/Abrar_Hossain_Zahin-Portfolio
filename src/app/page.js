@@ -131,14 +131,14 @@ function TiltCard({ children, className }) {
 function HeroOrb() {
   const RINGS = [
     // Durations and directions synced to your original snippet
-    { duration: 25, reverse: false, color: "rgba(168,85,247,0.15)", dash: false, dotColor: "#a855f7", offset: "0%" },
-    { duration: 18, reverse: true,  color: "rgba(217,70,239,0.20)", dash: true,  dotColor: "#d946ef", offset: "4%" },
-    { duration: 12, reverse: false, color: "rgba(168,85,247,0.30)", dash: false, dotColor: "#c084fc", offset: "8%" },
+    { duration: 23, reverse: false, color: "rgba(106, 148, 94, 0.45)", dash: false, dotColor: "#2ba966", offset: "0%" },
+    { duration: 18, reverse: true,  color: "rgba(203, 59, 247, 0.65)", dash: true,  dotColor: "#b62ec8", offset: "3%" },
+    { duration: 10, reverse: false, color: "rgba(34, 211, 238, 0.55)", dash: false, dotColor: "#3022ee", offset: "6%" },
   ];
 
   return (
     <div className="relative flex items-center justify-center"
-      style={{ width: "min(350px,80vw)", height: "min(350px,80vw)" }}>
+      style={{ width: "min(460px,80vw)", height: "min(460px,80vw)" }}>
 
       {/* Outer ambient glow */}
       <div className="absolute inset-0 rounded-full blur-3xl animate-pulse"
@@ -152,7 +152,7 @@ function HeroOrb() {
           className="absolute rounded-full"
           style={{
             inset: ring.offset,
-            border: `1px ${ring.dash ? "dashed" : "solid"} ${ring.color}`,
+            border: `2px ${ring.dash ? "dashed" : "solid"} ${ring.color}`,
           }}>
           {/* Orbiting dot - Matches original glow/size */}
           <div className="absolute rounded-full"
@@ -435,7 +435,7 @@ export default function Home() {
   const [c2, r2] = useCounter(researchPapers.length);
   const [c3, r3] = useCounter(3);
 
-  const TYPED_WORDS = ["AI & ML Engineer","Software Quality Tester","Deep Learning Researcher","Computer Vision Builder","NLP Practitioner","Green AI Advocate"];
+  const TYPED_WORDS = ["Full Stack AI Engineer","Software Quality Tester","Deep Learning Researcher","Computer Vision Builder","NLP Practitioner","Green AI Advocate"];
 
   const TOOLS = [
     { icon:"🤖", label:"AI Assistant",     tag:"Live AI",   desc:"Ask anything about Zahin's research, projects, and background.",     href:"/chat",             gradient:"linear-gradient(135deg,#7c3aed,#4f46e5)" },
@@ -501,11 +501,11 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="font-black leading-none mb-4 break-words 
-                          text-[1.50rem] 
-                          xs:text-[1.80rem] 
-                          sm:text-[2.00rem] 
-                          md:text-[2.10rem] 
-                          lg:text-[2.50rem] 
+                          text-[1.40rem] 
+                          xs:text-[1.70rem] 
+                          sm:text-[1.90rem] 
+                          md:text-[2.00rem] 
+                          lg:text-[2.45rem] 
                           tracking-[-0.03em]"
                 style={{ 
                   fontFamily: "'Syne', sans-serif",
@@ -866,7 +866,7 @@ export default function Home() {
                       { role: "user",      text: "What research has Zahin published?" },
                       { role: "assistant", text: "He has 6 research papers spanning Medical AI, Green Computing, XAI and Post-Quantum Cryptography. His most notable is TumorXAI — an explainable brain MRI classifier..." },
                       { role: "user",      text: "Is he open to collaborations?" },
-                      { role: "assistant", text: "Yes! Zahin is actively looking for research collaborations and internship opportunities in AI/ML. You can reach him via the Connect page." },
+                      { role: "assistant", text: "Yes! Zahin is actively looking for research collaborations and internship opportunities in Full Stack AI/ML. You can reach him via the Connect page." },
                     ].map((m, i) => (
                       <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                         <div className={`text-xs px-3 py-2 rounded-xl max-w-[85%] leading-relaxed ${

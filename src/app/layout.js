@@ -6,63 +6,76 @@ const BASE_URL = "https://abrar-hossain-zahin-portfolio.vercel.app";
 export const metadata = {
   metadataBase: new URL(BASE_URL),
 
+  /*
+    ── Browser tab title ─────────────────────────────────────
+    Shows: "Abrar Hossain Zahin | Full Stack AI Engineer"
+    On sub-pages: "About | Abrar Hossain Zahin" etc.
+  */
   title: {
-    default:  "Abrar Hossain Zahin | AI & ML Engineer",
+    default:  "Abrar Hossain Zahin | Full Stack AI Engineer",
     template: "%s | Abrar Hossain Zahin",
   },
+
   description:
-    "AI & ML Engineer and researcher at East West University, Dhaka. " +
-    "Specialising in Deep Learning, Computer Vision, NLP, Medical AI, XAI, and Green AI. " +
-    "6+ research papers, 10+ projects, 4 free AI tools.",
+    "Full Stack AI Engineer and researcher at East West University, Dhaka. " +
+    "Deep Learning, Computer Vision, NLP, Medical AI, XAI, Green AI. " +
+    "6+ research papers · 10+ projects · 4 free AI tools.",
 
   keywords: [
     "Abrar Hossain Zahin",
-    "AI ML Engineer Bangladesh",
+    "Full Stack AI Engineer Bangladesh",
     "Deep Learning Researcher",
     "East West University CSE",
     "Computer Vision NLP",
-    "TumorXAI GreenNet Research",
+    "TumorXAI GreenNet",
     "Portfolio Next.js",
   ],
 
-  authors: [{ name: "Abrar Hossain Zahin", url: BASE_URL }],
-  creator: "Abrar Hossain Zahin",
+  authors:  [{ name: "Abrar Hossain Zahin", url: BASE_URL }],
+  creator:  "Abrar Hossain Zahin",
 
   /*
-    Open Graph covers ALL major platforms:
-    ✅ Facebook
-    ✅ LinkedIn
-    ✅ WhatsApp
-    ✅ Telegram
-    ✅ Discord
-    ✅ Slack
-    ✅ iMessage (iOS link previews)
-    ✅ Reddit
-    ✅ Signal
+    ── Favicon / app icons ───────────────────────────────────
+    Place these files in /public/:
+      favicon.svg      ← the AZ logo (SVG scales perfectly)
+      favicon.ico      ← fallback for old browsers
+      apple-touch-icon.png ← 180×180 for iPhone home screen
+  */
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple:    [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/favicon.svg",
+  },
+
+  /*
+    ── Open Graph ────────────────────────────────────────────
+    WhatsApp, LinkedIn, Facebook preview card
   */
   openGraph: {
     type:        "website",
     url:         BASE_URL,
-    siteName:    "Abrar Hossain Zahin Portfolio",
-    title:       "Abrar Hossain Zahin | AI & ML Engineer",
+    siteName:    "Abrar Hossain Zahin",
+    title:       "Abrar Hossain Zahin | Full Stack AI Engineer",
     description:
-      "AI & ML researcher at EWU Dhaka - Deep Learning, Computer Vision, NLP, Green AI. " +
+      "Full Stack AI researcher at EWU Dhaka - Deep Learning, Computer Vision, NLP, Green AI. " +
       "6+ papers · 10+ projects · 4 free AI tools.",
-    images: [
-      {
-        url:    "/api/og",
-        width:  1200,
-        height: 630,
-        alt:    "Abrar Hossain Zahin - AI & ML Engineer Portfolio",
-      },
-    ],
+    images: [{
+      url:    "/api/og",
+      width:  1200,
+      height: 630,
+      alt:    "Abrar Hossain Zahin — Full Stack AI Engineer Portfolio",
+    }],
     locale: "en_US",
   },
 
   alternates: { canonical: BASE_URL },
+
   robots: {
-    index:  true,
-    follow: true,
+    index:     true,
+    follow:    true,
     googleBot: { index: true, follow: true },
   },
 };
@@ -71,13 +84,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark" data-scroll-behavior="smooth">
       <head>
+        {/* Preload Syne font */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
         <ThemeWrapper>{children}</ThemeWrapper>

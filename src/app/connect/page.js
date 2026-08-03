@@ -226,7 +226,7 @@ export default function Connect() {
             </span>
           </h1>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
-            Open to research collaborations, internship opportunities, AI/ML discussions,
+            Open to research collaborations, internship opportunities, Full Stack AI discussions,
             and any project that involves building something intelligent.
           </p>
 
@@ -235,7 +235,7 @@ export default function Connect() {
             {[
               { dot: "bg-emerald-400", text: "Open to Internships", border: "border-emerald-500/30 bg-emerald-500/10 text-emerald-400" },
               { dot: "bg-blue-400",    text: "Research Collaborations", border: "border-blue-500/30 bg-blue-500/10 text-blue-400" },
-              { dot: "bg-purple-400",  text: "AI/ML Projects", border: "border-purple-500/30 bg-purple-500/10 text-purple-400" },
+              { dot: "bg-purple-400",  text: "Full Stack AI/ML Projects", border: "border-purple-500/30 bg-purple-500/10 text-purple-400" },
             ].map(b => (
               <div key={b.text} className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono ${b.border}`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${b.dot} animate-pulse`} />
@@ -314,7 +314,7 @@ export default function Connect() {
               <div className="space-y-2.5">
                 {[
                   { icon: "🔬", text: "Joint Research Papers & Publications" },
-                  { icon: "💼", text: "AI/ML Internship Opportunities" },
+                  { icon: "💼", text: "Full Stack AI Internship Opportunities" },
                   { icon: "🤝", text: "Open-Source Project Collaboration" },
                   { icon: "🎤", text: "Tech Talks & Conference Presentations" },
                   { icon: "📚", text: "Thesis Partnerships & Mentorship" },
