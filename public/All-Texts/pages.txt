@@ -1,4 +1,4 @@
-I am Md. Abrar Hossain Zahin, a passionate Data Analyst, AI/ML enthusiast, and programmer currently pursuing my B.Sc. in Computer Science and Engineering (CSE) at East West University, Dhaka, Bangladesh.
+I am Abrar Hossain Zahin, a passionate Data Analyst, AI/ML enthusiast, and programmer currently completed my B.Sc. in Computer Science and Engineering (CSE) at East West University, Dhaka, Bangladesh.
 
 My journey in technology is driven by a strong desire to leverage AI and data-driven solutions for meaningful impact. I specialize in Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing. I enjoy turning complex problems into elegant solutions through code and have worked on diverse projects ranging from elderly care platforms to green computing models and job portals.
 
@@ -10,14 +10,14 @@ Here's clean, professional, and attractive **portfolio content** tailored for yo
 
 "Abrar Hossain Zahin"
 
-Tagline / Subtitle: "Aspiring Full Stack AI Engineer | Data Analyst | Passionate Programmer"
+Tagline / Subtitle: "Aspiring Full Stack AI/ML Engineer | Data Analyst | Passionate Programmer"
 
 Short Description: 
-"A dedicated B.Sc. Computer Science and Engineering student at East West University, Dhaka. Passionate about building intelligent systems using Machine Learning, Deep Learning, and Data Analytics to solve real-world problems, especially in healthcare, environment, and social impact areas in Bangladesh."
+"A dedicated B.Sc. in Computer Science and Engineering student at East West University, Dhaka. Passionate about building intelligent systems using Machine Learning, Deep Learning, and Data Analytics to solve real-world problems, especially in healthcare, environment, and social impact areas in Bangladesh."
 
 ### 2. About Section (Longer Bio)
 
-I am Abrar Hossain Zahin, a passionate Data Analyst, Full Stack AI enthusiast, and programmer currently pursuing my B.Sc. in Computer Science and Engineering (CSE) at East West University, Dhaka, Bangladesh.
+I am Abrar Hossain Zahin, a passionate Data Analyst, Full Stack AI enthusiast, and programmer currently completed my B.Sc. in Computer Science and Engineering (CSE) at East West University, Dhaka, Bangladesh.
 
 My journey in technology is driven by a strong desire to leverage AI and data-driven solutions for meaningful impact. I specialize in Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing. I enjoy turning complex problems into elegant solutions through code and have worked on diverse projects ranging from elderly care platforms to green computing models and job portals.
 
@@ -27,7 +27,7 @@ When I'm not coding, I actively participate in competitive programming (LeetCode
 
 **B.Sc. in Computer Science and Engineering (CSE)**  
 East West University, Dhaka, Bangladesh  
-(Currently Pursuing, CGPA: 3.76)
+(Currently completed, CGPA: 3.76)
 
 ### 4. Skills (Group them nicely)
 

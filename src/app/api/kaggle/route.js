@@ -19,15 +19,15 @@ const FALLBACK_DATA = {
   username: "mdabrarhossainzahin",
   tier: "Contributor",
   tierColor: "#3b82f6",
-  totalVotes: 201,        // ← Updated
-  followers: 5,           // ← Updated
-  following: 0,           // ← Updated
-  forks: 331,             // ← New field added
+  totalVotes: "300+",        // ← Updated
+  followers: "6+",           // ← Updated
+  forks: "500+",             // ← New field added
+  following: "0",           // ← Updated
   profileUrl: "https://www.kaggle.com/mdabrarhossainzahin",
   avatarUrl: null,
   medals: {
     competitions: { gold: 0, silver: 0, bronze: 0 },
-    notebooks:    { gold: 0, silver: 0, bronze: 2 },
+    notebooks:    { gold: 0, silver: 0, bronze: 3 },
     datasets:     { gold: 0, silver: 0, bronze: 0 },
     discussions:  { gold: 0, silver: 0, bronze: 0 },
   },
@@ -80,10 +80,10 @@ export async function GET() {
       username: profile.userName || KAGGLE_USERNAME,
       tier: profile.tier || "Contributor",
       tierColor: TIER_CONFIG[profile.tier]?.color || "#3b82f6",
-      totalVotes: profile.totalVotes || 201,
-      followers: profile.followersCount || 5,
-      following: profile.followingCount || 0,
-      forks: 331,                    // ← Added as requested
+      totalVotes: profile.totalVotes || "300+",
+      followers: profile.followersCount || "6+",
+      forks: profile.forksCount || "500+",      
+      following: profile.followingCount || "0",
       profileUrl: `https://www.kaggle.com/${KAGGLE_USERNAME}`,
       avatarUrl: profile.thumbnailUrl || null,
       medals: {

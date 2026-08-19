@@ -136,7 +136,7 @@ export default function KaggleBadge() {
           {[
             { label: "Votes",     val: data.totalVotes },
             { label: "Followers", val: data.followers  },
-            { label: "Following", val: data.following  },
+            { label: "Forks", val: data.forks  },
           ].map((s) => (
             <div key={s.label} className="text-center bg-zinc-950/60 rounded-xl py-3 border border-zinc-800">
               <p className="text-lg font-black text-zinc-100" style={{ fontFamily: "'Syne',sans-serif" }}>{s.val}</p>

@@ -131,9 +131,9 @@ function TiltCard({ children, className }) {
 function HeroOrb() {
   const RINGS = [
     // Durations and directions synced to your original snippet
-    { duration: 23, reverse: false, color: "rgba(106, 148, 94, 0.45)", dash: false, dotColor: "#2ba966", offset: "0%" },
-    { duration: 18, reverse: true,  color: "rgba(203, 59, 247, 0.65)", dash: true,  dotColor: "#b62ec8", offset: "3%" },
-    { duration: 10, reverse: false, color: "rgba(34, 211, 238, 0.55)", dash: false, dotColor: "#3022ee", offset: "6%" },
+    { duration: 23, reverse: false, color: "rgba(120, 234, 92, 0.45)", dash: false, dotColor: "#2ba966", offset: "0%" },
+    { duration: 18, reverse: true,  color: "rgba(187, 70, 223, 0.65)", dash: true,  dotColor: "#b62ec8", offset: "3%" },
+    { duration: 10, reverse: false, color: "rgba(34, 211, 238, 0.55)", dash: false, dotColor: "#20a3aa", offset: "6%" },
   ];
 
   return (
@@ -192,8 +192,8 @@ function HeroOrb() {
 
       {/* Floating badges — Positioned closer to the larger orb boundaries */}
       {[
-        { label: "5+ Papers",    icon: "🔬", style: { top: "1%",   left: "-5%"  } },
-        { label: "10+ Projects", icon: "🚀", style: { bottom: "5%", left: "-10%"  } },
+        { label: "6+ Papers",    icon: "🔬", style: { top: "1%",   right: "-5%"  } },
+        { label: "9+ Projects", icon: "🚀", style: { bottom: "5%", left: "-10%"  } },
         { label: "EWU · CSE",   icon: "🎓", style: { bottom: "2%",  right: "-8%"  } },
       ].map((b, i) => (
         <motion.div key={b.label}
@@ -238,13 +238,13 @@ function BentoCard({ project, variant = "normal", index = 0 }) {
         className="group relative h-full rounded-2xl overflow-hidden border border-zinc-800/80 hover:border-purple-500/40 transition-colors duration-300 flex flex-col"
         style={{ background: "linear-gradient(145deg,#18181b,#09090b)" }}>
 
-        <div className={`relative ${isFeatured ? "h-52" : "h-36"} bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden shrink-0`}>
+        <div className={`relative h-52 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden shrink-0`}>
           <div className="absolute inset-0 opacity-[0.18]"
             style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
           <span className="absolute bottom-2 right-3 text-6xl font-black text-white/10 select-none leading-none"
             style={{ fontFamily: "'Syne',sans-serif" }}>{String(index + 1).padStart(2, "0")}</span>
           <span className="relative select-none group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
-            style={{ fontSize: isFeatured ? "72px" : "52px" }}>{project.emoji}</span>
+            style={{ fontSize: "72px" }}>{project.emoji}</span>
           {project.featured && (
             <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-1 bg-black/50 backdrop-blur-sm border border-white/15 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -254,7 +254,7 @@ function BentoCard({ project, variant = "normal", index = 0 }) {
         </div>
 
         <div className="flex flex-col flex-1 p-5">
-          <h3 className="font-black text-zinc-100 leading-snug mb-2 group-hover:text-purple-200 transition-colors duration-200"
+          <h3 className="font-black !text-white dark:!text-zinc-100 leading-snug mb-2 hover:!text-purple-300 transition-colors duration-200"
             style={{ fontFamily: "'Syne',sans-serif", fontSize: isFeatured ? "1.1rem" : "0.95rem" }}>
             {project.title}
           </h3>
@@ -435,7 +435,7 @@ export default function Home() {
   const [c2, r2] = useCounter(researchPapers.length);
   const [c3, r3] = useCounter(3);
 
-  const TYPED_WORDS = ["Full Stack AI Engineer","Software Quality Tester","Deep Learning Researcher","Computer Vision Builder","NLP Practitioner","Green AI Advocate"];
+  const TYPED_WORDS = ["Full Stack AI Engineer", "AI/ML Researcher", "Deep Learning Researcher", "Computer Vision Researcher", "NLP & LLM Engineer", "Green AI Researcher","NLP Practitioner"];
 
   const TOOLS = [
     { icon:"🤖", label:"AI Assistant",     tag:"Live AI",   desc:"Ask anything about Zahin's research, projects, and background.",     href:"/chat",             gradient:"linear-gradient(135deg,#7c3aed,#4f46e5)" },
@@ -445,7 +445,7 @@ export default function Home() {
   ];
 
   const SOCIAL_LINKS = [
-    { label:"Facebook",     href:"https://facebook.com/AbrarHossainZahin" },
+    { label:"GitHub",     href:"https://github.com/Zahin2470" },
     { label:"Scholar",      href:"https://scholar.google.com/citations?user=PggflFIAAAAJ" },
     { label:"LinkedIn",     href:"https://linkedin.com/in/md-abrar-hossain-zahin" },
     { label:"Kaggle",       href:"https://kaggle.com/mdabrarhossainzahin" },
@@ -458,19 +458,27 @@ export default function Home() {
     <div className="text-white" style={{ overflowX:"hidden", background:"transparent" }}>
 
       {/* ══ HERO ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center" style={{ overflow:"hidden", background:"transparent" }}>
+      <section className="relative min-h-screen flex items-center" style={{ overflow: "hidden", background: "transparent" }}>
+
         <NeuralCanvas />
 
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl opacity-20"
-            style={{ background:"radial-gradient(circle,#7c3aed,transparent 70%)" }} />
-          <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full blur-3xl opacity-10"
-            style={{ background:"radial-gradient(circle,#2563eb,transparent 70%)" }} />
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+          {/* Concentric Orbital Rings centered towards the left */}
+          <svg className="absolute top-[52%] left-[-1%] -translate-y-1/2 w-[800px] h-[800px] opacity-35 dark:opacity-35" viewBox="0 0 800 800">
+            <circle cx="400" cy="400" r="180" stroke="#6366f1" strokeWidth="1.5" strokeDasharray="4 6" fill="none" />
+            <circle cx="400" cy="400" r="280" stroke="#06b6d4" strokeWidth="1.5" strokeDasharray="8 8" fill="none" />
+            <circle cx="400" cy="400" r="380" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="2 10" fill="none" />
+            <circle cx="400" cy="400" r="480" stroke="#3b82f6" strokeWidth="1.5" fill="none" opacity="0.4" />
+            {/* Node markers */}
+            <circle cx="220" cy="400" r="4" fill="#06b6d4" className="animate-ping" />
+            <circle cx="400" cy="120" r="5" fill="#a855f7" />
+            <circle cx="660" cy="400" r="4" fill="#6366f1" />
+          </svg>
+
+          {/* Soft Radial Ambient Gradient */}
+          <div className="absolute top-[52%] right-[10%] -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-200/20 via-indigo-200/20 to-purple-200/20 rounded-full blur-3xl dark:from-indigo-900/10" />
         </div>
-
-        <div className="absolute inset-0 z-0 pointer-events-none"
-          style={{ backgroundImage:"linear-gradient(rgba(168,85,247,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,0.04) 1px,transparent 1px)", backgroundSize:"72px 72px" }} />
-
+        
         <motion.div style={{ y:heroParallax, opacity:heroFade }}
           className="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-6 pt-28 pb-20">
           <div className="flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center gap-10">
@@ -501,8 +509,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="font-black leading-none mb-4 break-words 
-                          text-[1.40rem] 
-                          xs:text-[1.70rem] 
+                          text-[1.50rem] 
+                          xs:text-[1.75rem] 
                           sm:text-[1.90rem] 
                           md:text-[2.00rem] 
                           lg:text-[2.45rem] 
@@ -515,7 +523,7 @@ export default function Home() {
                 <div className="whitespace-nowrap">
                   <span className="text-white">Abrar </span>
                   <span className="text-white">Hossain </span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-300 to-blue-400">Zahin</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-fuchsia-300 to-blue-500">Zahin</span>
                 </div>
               </motion.h1>
 
@@ -528,9 +536,9 @@ export default function Home() {
                 className="text-zinc-400 leading-relaxed max-w-lg mb-8 text-center lg:text-left"
                 style={{ fontSize:"0.97rem" }}>
                 B.Sc. in CSE at{" "}
-                <span className="text-purple-300 font-medium">East West University, Dhaka, Bangladesh</span>
-                {" "}- building intelligent systems for Healthcare, Environment &amp; Education
-                using ML, DL, NLP &amp; Computer Vision.
+                <span className="text-purple-500 font-medium">East West University, Dhaka, Bangladesh</span>
+                {" "}- an AI/ML researcher and Full Stack Developer building intelligent, explainable systems across Healthcare, Environment &amp;
+                Education using Machine Learning, Deep Learning, NLP, Computer Vision &amp; Generative AI.
               </motion.p>
 
               {/* ─── FIXED: uses s.label and s.href, not s.l / s.h ─── */}
@@ -734,9 +742,9 @@ export default function Home() {
                       {/* Mock sections */}
                       {[
                         { title: "PROFESSIONAL SUMMARY", lines: ["Passionate engineer with expertise in machine", "learning, deep learning and computer vision..."] },
-                        { title: "EDUCATION", lines: ["B.Sc. Computer Science · Your University · 2022–Present", "GPA: 3.7 · Focus: ML, DL, NLP"] },
+                        { title: "EDUCATION", lines: ["B.Sc. in Computer Science and Engineering · East West University · 6-2022–8-2026", "GPA: 3.76 · Focus: AI, ML, DL, NLP"] },
                         { title: "SKILLS", lines: ["AI / ML: Python, TensorFlow, PyTorch, Scikit-learn", "Web: React, Next.js, TypeScript, Tailwind CSS"] },
-                        { title: "PROJECTS", lines: ["Project Name — Tech Stack", "Brief description of what it does and what you built..."] },
+                        { title: "PROJECTS", lines: ["Project Name - Tech Stack", "Brief description of what it does and what you built..."] },
                       ].map((sec) => (
                         <div key={sec.title} style={{ marginBottom: "8px" }}>
                           <div style={{ fontSize: "7px", fontWeight: "700", letterSpacing: "0.08em", borderBottom: "0.5px solid #e4e4e7", paddingBottom: "2px", marginBottom: "4px", color: "#18181b" }}>

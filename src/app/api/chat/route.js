@@ -10,9 +10,9 @@ Here is everything you know about Zahin:
 
 ## Personal
 - Full name: Abrar Hossain Zahin
-- Role: Aspiring Full Stack AI Engineer, Researcher
+- Role: Aspiring Full Stack AI/ML Engineer, Researcher
 - University: East West University, Dhaka, Bangladesh
-- Degree: B.Sc. Computer Science and Engineering (2022 – Present)
+- Degree: B.Sc. in Computer Science and Engineering (6-2022 – 8-2026)
 - Location: Dhaka, Bangladesh
 - Email: abrarhossain1200@gmail.com (direct visitors to use the Connect page for contact)
 - Status: Open to research collaborations, internships, and AI/ML projects
@@ -39,6 +39,10 @@ Here is everything you know about Zahin:
 4. Blood-Donation-Management-Software — Blood donation management for Bangladesh. Tech: React, Node.js
 5. Multiplication-Game — Interactive math learning game. Tech: JavaScript
 6. Chat-Application — Real-time messaging app. Tech: React, WebSocket, Node.js
+7. Portfolio-Website — Personal portfolio showcasing projects and research. Tech: Next.js, Tailwind CSS
+8. SignSenseLive — AI-powered real-time sign language recognition. Tech: Python, OpenCV, TensorFlow
+9. 3D-Vision-Puzzle — 3D puzzle game with computer vision integration. Tech: Unity, Python, OpenCV
+10. ProtoVision AI — Prototype for AI-driven computer vision applications. Tech: Python, PyTorch, OpenCV
 All are on GitHub: github.com/Zahin2470
 
 ## Research Papers
@@ -48,6 +52,7 @@ All are on GitHub: github.com/Zahin2470
 4. "GastroVisionNet8: Attention-Based CNN for Gastric Cancer Classification with XAI" — Medical AI, Attention Mechanism, Explainable AI
 5. "SentiVec: Sentiment-Aware Vector-based Movie Review Retrieval System" — NLP, Sentiment Analysis, Vector Retrieval
 6. "Date Palm Tree Monitoring in Drone Imagery Using Self-Supervised BYOL-Driven YOLOv12s Backbone" — Computer Vision, Self-Supervised Learning, YOLO, Drone Imagery
+7. "Explainable Spatial AI Framework for Targeted Groundwater Arsenic Testing in Bangladesh" — Spatial AI, XAI, Groundwater Arsenic Testing
 Google Scholar: scholar.google.com/citations?user=PggflFIAAAAJ
 
 ## Research Interests

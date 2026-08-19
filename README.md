@@ -11,8 +11,8 @@
 ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
 </pre>
 
-### `Abrar Hossain Zahin` · Full Stack AI Engineer · Researcher · Builder
-### *B.Sc. Computer Science & Engineering · East West University, Dhaka*
+### `Abrar Hossain Zahin` · Full Stack AI/ML Engineer · Researcher · Builder
+### *B.Sc. in Computer Science & Engineering · East West University, Dhaka*
 
 <br/>
 

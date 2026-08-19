@@ -132,7 +132,7 @@ const CASE_STUDIES = [
     problem: "Existing deep learning models for brain tumor classification are black boxes — they achieve high accuracy but provide zero explanation for their decisions. Radiologists cannot trust or verify these predictions clinically.",
     approach: "Used contrastive self-supervised learning (SimCLR) to pre-train on large unlabeled MRI datasets, then fine-tuned with only 20% labeled data. Applied Grad-CAM and SHAP to generate spatial attention maps highlighting tumor regions.",
     results: [
-      { metric: "Accuracy",      value: "94.2%",   note: "on BraTS dataset"  },
+      { metric: "Accuracy",      value: "99.44%",   note: "on BraTS dataset"  },
       { metric: "Labeled Data",  value: "20%",     note: "needed vs 100%"    },
       { metric: "Explainability",value: "Grad-CAM", note: "+ SHAP maps"      },
     ],
@@ -157,9 +157,9 @@ const CASE_STUDIES = [
     problem: "Modern deep learning models require enormous compute resources. Deploying AI in resource-constrained environments (IoT, mobile, edge devices) in developing countries is impractical with current model sizes.",
     approach: "Applied structured knowledge distillation — a small student network learns from a large teacher network. Custom loss function balances accuracy preservation against model compression ratio.",
     results: [
-      { metric: "Model Size",  value: "8×",    note: "smaller than baseline"   },
+      { metric: "Model Size",  value: "121×",    note: "smaller than baseline"   },
       { metric: "Energy Cost", value: "73%",   note: "reduction"               },
-      { metric: "Accuracy",    value: "97.1%", note: "of original retained"    },
+      { metric: "Accuracy",    value: "99.33%", note: "of original retained"    },
     ],
     impact: "Makes AI accessible for deployment in Bangladesh and similar regions with limited computational infrastructure, directly supporting sustainable development goals.",
     techStack: ["TensorFlow", "Knowledge Distillation", "TFLite", "Raspberry Pi", "CIFAR-100"],
