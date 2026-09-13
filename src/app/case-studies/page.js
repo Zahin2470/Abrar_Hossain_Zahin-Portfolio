@@ -198,7 +198,7 @@ const CASE_STUDIES = [
     id: 7,
     emoji: "🔬",
     tag: "Medical AI · Gastroenterology",
-    title: "GastroVisionNet8",
+    title: "GastroVisionNet",
     subtitle: "Gastric Cancer Classification with XAI",
     gradient: "from-rose-600 to-pink-600",
     year: "2025",
@@ -241,7 +241,7 @@ function CaseStudyCard({ cs, isOpen, onToggle }) {
     "text-purple-400",   // 4: TumorXAI
     "text-emerald-400",  // 5: GreenNet
     "text-blue-400",     // 6: Post-Quantum TLS
-    "text-rose-400",     // 7: GastroVisionNet8
+    "text-rose-400",     // 7: GastroVisionNet
   ];
   const color = gradColors[(cs.id - 1) % gradColors.length];
 

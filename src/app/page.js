@@ -192,9 +192,9 @@ function HeroOrb() {
 
       {/* Floating badges — Positioned closer to the larger orb boundaries */}
       {[
-        { label: "6+ Papers",    icon: "🔬", style: { top: "1%",   right: "-5%"  } },
-        { label: "9+ Projects", icon: "🚀", style: { bottom: "5%", left: "-10%"  } },
-        { label: "EWU · CSE",   icon: "🎓", style: { bottom: "2%",  right: "-8%"  } },
+        { label: "6+ Papers",    icon: "🔬", style: { top: "4%",   right: "-2%"  } },
+        { label: "10+ Projects", icon: "🚀", style: { bottom: "6%", left: "-9%"  } },
+        { label: "EWU · CSE · AI/ML",   icon: "🎓", style: { bottom: "2%",  right: "-12%"  } },
       ].map((b, i) => (
         <motion.div key={b.label}
           animate={{ y: [0, i % 2 === 0 ? -10 : 10, 0] }} // Alternating float from previous code
@@ -238,13 +238,13 @@ function BentoCard({ project, variant = "normal", index = 0 }) {
         className="group relative h-full rounded-2xl overflow-hidden border border-zinc-800/80 hover:border-purple-500/40 transition-colors duration-300 flex flex-col"
         style={{ background: "linear-gradient(145deg,#18181b,#09090b)" }}>
 
-        <div className={`relative h-52 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden shrink-0`}>
+        <div className={`relative h-32 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden shrink-0`}>
           <div className="absolute inset-0 opacity-[0.18]"
             style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
-          <span className="absolute bottom-2 right-3 text-6xl font-black text-white/10 select-none leading-none"
+          <span className="absolute bottom-2 right-3 text-5xl font-black text-white/10 select-none leading-none"
             style={{ fontFamily: "'Syne',sans-serif" }}>{String(index + 1).padStart(2, "0")}</span>
           <span className="relative select-none group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
-            style={{ fontSize: "72px" }}>{project.emoji}</span>
+            style={{ fontSize: "56px" }}>{project.emoji}</span>
           {project.featured && (
             <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-1 bg-black/50 backdrop-blur-sm border border-white/15 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -253,19 +253,19 @@ function BentoCard({ project, variant = "normal", index = 0 }) {
           )}
         </div>
 
-        <div className="flex flex-col flex-1 p-5">
+        <div className="flex flex-col flex-1 p-4">
           <h3 className="font-black !text-white dark:!text-zinc-100 leading-snug mb-2 hover:!text-purple-300 transition-colors duration-200"
-            style={{ fontFamily: "'Syne',sans-serif", fontSize: isFeatured ? "1.1rem" : "0.95rem" }}>
+            style={{ fontFamily: "'Syne',sans-serif", fontSize: isFeatured ? "1rem" : "0.9rem" }}>
             {project.title}
           </h3>
-          <p className="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">{project.description}</p>
-          <div className="flex flex-wrap gap-1 mb-4">
+          <p className="text-[11px] text-zinc-600 leading-relaxed mb-3 flex-1">{project.description}</p>
+          <div className="flex flex-wrap gap-1 mb-3">
             {project.tags.slice(0, isFeatured ? 4 : 2).map(t => (
-              <span key={t} className="text-[9px] font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-500 border border-zinc-700/50">{t}</span>
+              <span key={t} className="text-[8px] font-mono px-1.5 py-0.5 rounded-md bg-zinc-800 text-zinc-500 border border-zinc-700/50">{t}</span>
             ))}
           </div>
           <a href={project.github} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-600 hover:text-purple-400 transition-colors group/lnk">
+            className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-600 hover:text-purple-400 transition-colors group/lnk">
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
             </svg>
@@ -435,7 +435,7 @@ export default function Home() {
   const [c2, r2] = useCounter(researchPapers.length);
   const [c3, r3] = useCounter(3);
 
-  const TYPED_WORDS = ["Full Stack AI Engineer", "AI/ML Researcher", "Deep Learning Researcher", "Computer Vision Researcher", "NLP & LLM Engineer", "Green AI Researcher","NLP Practitioner"];
+  const TYPED_WORDS = ["AI/ML Researcher", "Full Stack AI Engineer", "GTA of East West University","Deep Learning Researcher", "Computer Vision Researcher", "NLP & LLM Engineer", "Green AI Researcher","NLP Practitioner"];
 
   const TOOLS = [
     { icon:"🤖", label:"AI Assistant",     tag:"Live AI",   desc:"Ask anything about Zahin's research, projects, and background.",     href:"/chat",             gradient:"linear-gradient(135deg,#7c3aed,#4f46e5)" },
@@ -449,7 +449,7 @@ export default function Home() {
     { label:"Scholar",      href:"https://scholar.google.com/citations?user=PggflFIAAAAJ" },
     { label:"LinkedIn",     href:"https://linkedin.com/in/md-abrar-hossain-zahin" },
     { label:"Kaggle",       href:"https://kaggle.com/mdabrarhossainzahin" },
-    { label:"LeetCode",     href:"https://leetcode.com/u/MdZahin" },
+    { label:"LeetCode",     href:"https://leetcode.com/u/AbrarHossainZahin/" },
     { label:"ResearchGate", href:"https://www.researchgate.net/profile/Abrar-Zahin-7" },
     { label:"YouTube",      href:"https://www.youtube.com/@Abrar_Hossain_Zahin" },
   ];
@@ -535,10 +535,8 @@ export default function Home() {
               <motion.p initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.6 }}
                 className="text-zinc-400 leading-relaxed max-w-lg mb-8 text-center lg:text-left"
                 style={{ fontSize:"0.97rem" }}>
-                B.Sc. in CSE at{" "}
-                <span className="text-purple-500 font-medium">East West University, Dhaka, Bangladesh</span>
-                {" "}- an AI/ML researcher and Full Stack Developer building intelligent, explainable systems across Healthcare, Environment &amp;
-                Education using Machine Learning, Deep Learning, NLP, Computer Vision &amp; Generative AI.
+                <span className="text-purple-500 font-medium">AI/ML Researcher & Full Stack Engineer</span>
+                {" "}bridging cutting-edge Deep Learning. CSE Graduate & M.Sc. Candidate at East West University focusing on trustworthy, explainable AI systems that solve high-stakes challenges in health, climate, and learning &amp; Generative AI.
               </motion.p>
 
               {/* ─── FIXED: uses s.label and s.href, not s.l / s.h ─── */}
@@ -612,7 +610,7 @@ export default function Home() {
               all projects →
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
             {projects.slice(0,2).map((p,i) => (
               <div key={p.id} className="lg:col-span-1">
                 <BentoCard project={p} variant="featured" index={i} />

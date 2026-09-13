@@ -45,13 +45,13 @@ export default function About() {
                         <span className="text-white">About </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Me</span>
           </h1>
-          <p className="text-zinc-400 max-w-2xl leading-relaxed text-lg">{siteConfig.bio}</p>
+          <p className="text-zinc-400 max-w-5xl leading-relaxed text-lg">{siteConfig.bio}</p>
         </motion.div>
 
         {/* ── TWO-COLUMN: info + education ────────────────── */}
         <div className="grid lg:grid-cols-2 gap-8 mb-20">
 
-          {/* Info cards grid */}
+        {/* Info cards grid + Resume + Quick stats */}
           <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.7 }}>
             <div className="grid grid-cols-1 gap-3">
               {[
@@ -128,49 +128,13 @@ export default function About() {
               </svg>
               Download Resume ↗
             </motion.a>
-          </motion.div>
 
-          {/* Education card */}
-          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.7 }}>
-            {education.map((edu, i) => (
-              <div key={i} className="relative mb-6">
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/15 to-blue-600/10 blur-sm" />
-                <div className="relative bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-6 transition-colors">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-xl shadow-lg shrink-0">
-                      🎓
-                    </div>
-                    <div>
-                      <span className="text-xs font-mono text-purple-400 tracking-widest uppercase">Bachelor&apos;s Degree</span>
-                      <h3 className="text-base font-black text-white mt-0.5 leading-snug"
-                        style={{ fontFamily: "'Syne',sans-serif" }}>
-                        {edu.degree}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-zinc-400">
-                      <span className="text-zinc-600 font-mono text-xs">inst.</span>
-                      <span>{edu.institution}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-zinc-600 font-mono text-xs">period</span>
-                      <span className="text-xs font-mono px-2 py-0.5 bg-purple-600/20 text-purple-400 border border-purple-500/30 rounded-full">
-                        {edu.period}
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-xs text-zinc-600 mt-4 leading-relaxed border-t border-zinc-800 pt-4">{edu.description}</p>
-                </div>
-              </div>
-            ))}
-
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-3">
+            {/* Quick stats (Moved here under Resume button) */}
+            <div className="grid grid-cols-3 gap-3 mt-4">
               {[
-                { num: "3+",  label: "Years Coding",   color: "from-purple-400 to-fuchsia-400" },
+                { num: "4+",  label: "Years Coding",   color: "from-purple-400 to-fuchsia-400" },
                 { num: "10+",  label: "Projects",       color: "from-blue-400 to-cyan-400" },
-                { num: "5+",  label: "Papers",         color: "from-emerald-400 to-teal-400" },
+                { num: "6+",  label: "Papers",         color: "from-emerald-400 to-teal-400" },
               ].map((s) => (
                 <div key={s.label} className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-3 text-center">
                   <p className={`text-2xl font-black bg-gradient-to-r ${s.color} bg-clip-text text-transparent`}
@@ -178,6 +142,76 @@ export default function About() {
                   <p className="text-[10px] font-mono text-zinc-600 mt-0.5">{s.label}</p>
                 </div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* Education Cards */}
+          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.7 }}>
+            
+            {/* M.Sc. Card */}
+            <div className="relative mb-6">
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/15 to-blue-600/10 blur-sm" />
+              <div className="relative bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-6 transition-colors">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-xl shadow-lg shrink-0">
+                    🎓
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-purple-400 tracking-widest uppercase">Master&apos;s Degree</span>
+                    <h3 className="text-base font-black text-white mt-0.5 leading-snug" style={{ fontFamily: "'Syne',sans-serif" }}>
+                      M.Sc. in Artificial Intelligence &amp; Machine Learning
+                    </h3>
+                  </div>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-zinc-400">
+                    <span className="text-zinc-600 font-mono text-xs">inst.</span>
+                    <span>East West University</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-zinc-600 font-mono text-xs">period</span>
+                    <span className="text-xs font-mono px-2 py-0.5 bg-purple-600/20 text-purple-400 border border-purple-500/30 rounded-full">
+                      Ongoing
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs text-zinc-600 mt-4 leading-relaxed border-t border-zinc-800 pt-4">
+                  Focusing on ML, deep learning, NLP, computer vision, and explainable AI systems.
+                </p>
+              </div>
+            </div>
+
+            {/* B.Sc. Card */}
+            <div className="relative mb-6">
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-purple-600/15 to-blue-600/10 blur-sm" />
+              <div className="relative bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-6 transition-colors">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-xl shadow-lg shrink-0">
+                    🎓
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-purple-400 tracking-widest uppercase">Bachelor&apos;s Degree</span>
+                    <h3 className="text-base font-black text-white mt-0.5 leading-snug" style={{ fontFamily: "'Syne',sans-serif" }}>
+                      B.Sc. in Computer Science &amp; Engineering
+                    </h3>
+                  </div>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-zinc-400">
+                    <span className="text-zinc-600 font-mono text-xs">inst.</span>
+                    <span>East West University</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-zinc-600 font-mono text-xs">period</span>
+                    <span className="text-xs font-mono px-2 py-0.5 bg-purple-600/20 text-purple-400 border border-purple-500/30 rounded-full">
+                      Completed
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs text-zinc-600 mt-4 leading-relaxed border-t border-zinc-800 pt-4">
+                  Solid foundation in algorithms, AI, NLP Based Research, full-stack architectures.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

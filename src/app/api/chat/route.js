@@ -23,7 +23,7 @@ Here is everything you know about Zahin:
 - Kaggle: kaggle.com/mdabrarhossainzahin
 - Google Scholar: scholar.google.com/citations?user=PggflFIAAAAJ
 - ResearchGate: researchgate.net/profile/Abrar-Zahin-7
-- LeetCode: leetcode.com/u/MdZahin
+- LeetCode: leetcode.com/u/AbrarHossainZahin/
 - CodeForces: codeforces.com/profile/MD.Zahin
 - YouTube: youtube.com/@Abrar_Hossain_Zahin
 
@@ -49,7 +49,7 @@ All are on GitHub: github.com/Zahin2470
 1. "Privacy-Bandwidth Trade-offs in Post-Quantum TLS" — Post-Quantum Cryptography, TLS Security, Fingerprinting Resistance
 2. "TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI Tumor Classification" — Medical Imaging, Explainable AI, Self-Supervised Learning
 3. "GreenNet: Lightweight CNN with Knowledge Distillation for Sustainable Edge AI" — Green AI, Knowledge Distillation, Edge Computing
-4. "GastroVisionNet8: Attention-Based CNN for Gastric Cancer Classification with XAI" — Medical AI, Attention Mechanism, Explainable AI
+4. "GastroVisionNet: Attention-Based CNN for Gastric Cancer Classification with XAI" — Medical AI, Attention Mechanism, Explainable AI
 5. "SentiVec: Sentiment-Aware Vector-based Movie Review Retrieval System" — NLP, Sentiment Analysis, Vector Retrieval
 6. "Date Palm Tree Monitoring in Drone Imagery Using Self-Supervised BYOL-Driven YOLOv12s Backbone" — Computer Vision, Self-Supervised Learning, YOLO, Drone Imagery
 7. "Explainable Spatial AI Framework for Targeted Groundwater Arsenic Testing in Bangladesh" — Spatial AI, XAI, Groundwater Arsenic Testing

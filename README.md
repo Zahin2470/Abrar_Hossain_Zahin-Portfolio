@@ -263,7 +263,7 @@ npm run dev
 | 📊 Kaggle | [kaggle.com/mdabrarhossainzahin](https://kaggle.com/mdabrarhossainzahin) |
 | 🔬 ResearchGate | [researchgate.net/profile/Abrar-Zahin-7](https://researchgate.net/profile/Abrar-Zahin-7) |
 | 📚 Google Scholar | [scholar.google.com/citations?user=PggflFIAAAAJ](https://scholar.google.com/citations?user=PggflFIAAAAJ) |
-| ⚔️ LeetCode | [leetcode.com/u/MdZahin](https://leetcode.com/u/MdZahin) |
+| ⚔️ LeetCode | [leetcode.com/u/AbrarHossainZahin](https://leetcode.com/u/AbrarHossainZahin/) |
 | 💻 CodeForces | [codeforces.com/profile/MD.Zahin](https://codeforces.com/profile/MD.Zahin) |
 | 🎥 YouTube | [youtube.com/@Abrar_Hossain_Zahin](https://youtube.com/@Abrar_Hossain_Zahin) |
 

@@ -42,7 +42,7 @@ const jsonLd = {
     "https://kaggle.com/mdabrarhossainzahin",
     "https://scholar.google.com/citations?user=PggflFIAAAAJ",
     "https://researchgate.net/profile/Abrar-Zahin-7",
-    "https://leetcode.com/u/MdZahin",
+    "https://leetcode.com/u/AbrarHossainZahin/",
     "https://codeforces.com/profile/MD.Zahin",
     "https://youtube.com/@Abrar_Hossain_Zahin",
   ],
@@ -135,7 +135,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark" data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className="dark"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -150,7 +155,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeWrapper>{children}</ThemeWrapper>
       </body>
     </html>

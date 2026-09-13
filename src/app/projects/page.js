@@ -68,7 +68,7 @@ function ProjectCard({ project, index }) {
       {/* Info */}
       <div className="p-5">
         <p className="text-[9px] font-mono text-purple-400 uppercase tracking-widest mb-1">
-          {project.featured ? "Featured Project" : "Project"}
+          {project.featured ? "Project" : "Project"}
         </p>
         <h3 className="font-black text-zinc-100 leading-tight mb-2
           group-hover:text-white transition-colors"
@@ -148,7 +148,7 @@ export default function Projects() {
             <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shadow-lg"
               style={{ background: "linear-gradient(135deg,#7c3aed,#4f46e5)" }}>🚀</div>
             <p className="text-xs font-mono text-purple-400 tracking-widest uppercase">
-              Featured Projects
+              Projects
             </p>
           </div>
           <h1 className="font-black leading-none mb-4"

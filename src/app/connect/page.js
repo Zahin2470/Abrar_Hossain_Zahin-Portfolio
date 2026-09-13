@@ -349,7 +349,7 @@ export default function Connect() {
               { label:"Kaggle",       icon:"kaggle",      url:"https://kaggle.com/mdabrarhossainzahin",                    handle:"@mdabrarhossainzahin" },
               { label:"Scholar",      icon:"scholar",     url:"https://scholar.google.com/citations?user=PggflFIAAAAJ",    handle:"Google Scholar" },
               { label:"ResearchGate", icon:"researchgate",url:"https://researchgate.net/profile/Abrar-Zahin-7",            handle:"Abrar-Zahin-7" },
-              { label:"LeetCode",     icon:"leetcode",    url:"https://leetcode.com/u/MdZahin",                            handle:"@MdZahin" },
+              { label:"LeetCode",     icon:"leetcode",    url:"https://leetcode.com/u/AbrarHossainZahin/",                            handle:"@MdZahin" },
               { label:"CodeForces",   icon:"codeforces",  url:"https://codeforces.com/profile/MD.Zahin",                   handle:"MD.Zahin" },
               { label:"YouTube",      icon:"youtube",     url:"https://youtube.com/@Abrar_Hossain_Zahin",                  handle:"@Abrar_Hossain_Zahin" },
             ]).map((link, i) => (

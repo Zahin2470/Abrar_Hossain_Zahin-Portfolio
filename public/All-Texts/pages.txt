@@ -73,7 +73,7 @@ Docker, Streamlit, Git, GitHub, Jupyter Notebook, Linux
 - **GitHub**: https://github.com/Zahin2470
 - **LinkedIn**: https://linkedin.com/in/md-abrar-hossain-zahin
 - **Kaggle**: https://kaggle.com/mdabrarhossainzahin
-- **LeetCode**: https://leetcode.com/u/MdZahin
+- **LeetCode**: https://leetcode.com/u/AbrarHossainZahin/
 - **CodeForces**: https://codeforces.com/profile/MD.Zahin
 - **ResearchGate**: https://researchgate.net/profile/Abrar-Zahin-7
 - **Google Scholar**: https://scholar.google.com/citations?user=PggflFIAAAAJ
