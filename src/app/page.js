@@ -740,7 +740,7 @@ export default function Home() {
                       {/* Mock sections */}
                       {[
                         { title: "PROFESSIONAL SUMMARY", lines: ["Passionate engineer with expertise in machine", "learning, deep learning and computer vision..."] },
-                        { title: "EDUCATION", lines: ["B.Sc. in Computer Science and Engineering · East West University · 6-2022–8-2026", "GPA: 3.76 · Focus: AI, ML, DL, NLP"] },
+                        { title: "EDUCATION", lines: ["B.Sc. in Computer Science and Engineering · East West University · 6-2022–8-2026", "GPA: 3.77 · Focus: AI, ML, DL, NLP"] },
                         { title: "SKILLS", lines: ["AI / ML: Python, TensorFlow, PyTorch, Scikit-learn", "Web: React, Next.js, TypeScript, Tailwind CSS"] },
                         { title: "PROJECTS", lines: ["Project Name - Tech Stack", "Brief description of what it does and what you built..."] },
                       ].map((sec) => (

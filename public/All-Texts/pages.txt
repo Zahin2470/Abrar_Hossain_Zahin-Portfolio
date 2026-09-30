@@ -27,7 +27,7 @@ When I'm not coding, I actively participate in competitive programming (LeetCode
 
 **B.Sc. in Computer Science and Engineering (CSE)**  
 East West University, Dhaka, Bangladesh  
-(Currently completed, CGPA: 3.76)
+(Currently completed, CGPA: 3.77)
 
 ### 4. Skills (Group them nicely)
 
@@ -79,6 +79,7 @@ Docker, Streamlit, Git, GitHub, Jupyter Notebook, Linux
 - **Google Scholar**: https://scholar.google.com/citations?user=PggflFIAAAAJ
 - **YouTube**: https://www.youtube.com/@Abrar_Hossain_Zahin
 - **Freelancer**: https://www.my.freelancer.com/u/mdzahin2022
+- **ORCID**: | https://orcid.org/my-orcid?orcid=0009-0001-5246-7759
 
 ### 7. Optional Footer / Additional Line
 "Open to collaboration on Full Stack AI/ML projects | Passionate about research and open-source contributions"

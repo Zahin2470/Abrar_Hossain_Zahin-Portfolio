@@ -26,8 +26,10 @@ const icons = {
     </svg>
   ),
   researchgate: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.193 12.193 0 00-.368 3.197 12.334 12.334 0 00.368 3.243c.243.743.65 1.303 1.213 1.68.565.376 1.255.565 2.073.565.817 0 1.507-.19 2.072-.565.564-.377.972-.937 1.215-1.68a12.298 12.298 0 00.367-3.243 12.157 12.157 0 00-.367-3.197c-.243-.744-.651-1.303-1.215-1.68C21.093.19 20.403 0 19.586 0zm0 8.553c-.976 0-1.464-.985-1.464-2.956 0-1.974.488-2.96 1.464-2.96.974 0 1.462.986 1.462 2.96 0 1.97-.488 2.956-1.462 2.956zM0 .39v23.22h11.366v-2.39H2.39V2.78H11.366V.39z" />
+    <svg className="w-5 h-5" viewBox="0 0 24 24" aria-label="ResearchGate" fill="none">
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12" />
+      <path d="M8.7 7.6h1.9c1.6 0 2.9 1 2.9 2.6 0 1.6-1.3 2.6-2.9 2.6H8.7V7.6zm1.9 4.1c1 0 1.7-.6 1.7-1.5s-.7-1.5-1.7-1.5H8.7v3h1.9zm3.1-4.1h2.1v1.2h-2.1v3.6h2.9v1.2h-4.1V7.6h1.2zm-2.5 9.1h-1.7l2.5-5.6h1.7l-2.5 5.6z" fill="currentColor"/>
+      <path d="M15.9 15.2h-1.5v1.5h1.5v-1.5zm-1.5-8.7h1.5v6.2h-1.5V6.5z" fill="currentColor" opacity="0.9"/>
     </svg>
   ),
   leetcode: (
@@ -56,6 +58,13 @@ const icons = {
       <path d="M22.428 0H1.572C.704 0 0 .704 0 1.572v20.856C0 23.296.704 24 1.572 24h20.856C23.296 24 24 23.296 24 22.428V1.572C24 .704 23.296 0 22.428 0zM18.77 7.894l-5.13 5.13 2.59 5.18H13.5l-1.94-3.88-3.88 1.94V13.5l3.88-1.94L9.576 7.894h2.73l1.558 3.115 3.115-3.115h1.79z"/>
     </svg>
   ),
+
+  orcid: (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" aria-label="ORCID" fill="none">
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.12"/>
+      <path d="M8.4 8.1a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zm-1.5 1.5h3v7.2h-3V9.6zm5.1 0h2.9c3 0 4.7 2 4.7 4.8 0 2.8-1.7 4.8-4.7 4.8h-2.9V9.6zm2.9 1.8h-.3c-1.1 0-1.9.7-1.9 2 0 1.4.8 2.1 1.9 2.1h.3v-4.1zm-1.8-4.2h3.3v1.2h-3.3V7.2z" fill="currentColor"/>
+    </svg>
+  ),
 };
 
 /* ── Platform card ──────────────────────────────────────── */
@@ -70,6 +79,7 @@ const PLATFORM_CONFIG = {
   YouTube:     { color: "#ff0000", bg: "rgba(255,0,0,0.10)",    border: "rgba(255,0,0,0.22)",    glow: "rgba(255,0,0,0.10)"   },
   Facebook:    { color: "#1877f2", bg: "rgba(24,119,242,0.10)", border: "rgba(24,119,242,0.25)",  glow: "rgba(24,119,242,0.12)" },
   Freelancer:  { color: "#008f4c", bg: "rgba(0,143,76,0.10)",   border: "rgba(0,143,76,0.25)",   glow: "rgba(0,143,76,0.12)"  },
+  ORCID:       { color: "#a855f7", bg: "rgba(85, 247, 99, 0.1)", border: "rgba(168,85,247,0.25)", glow: "rgba(168,85,247,0.12)" },
 };
 
 function SocialCard({ link, index }) {
@@ -349,9 +359,10 @@ export default function Connect() {
               { label:"Kaggle",       icon:"kaggle",      url:"https://kaggle.com/mdabrarhossainzahin",                    handle:"@mdabrarhossainzahin" },
               { label:"Scholar",      icon:"scholar",     url:"https://scholar.google.com/citations?user=PggflFIAAAAJ",    handle:"Google Scholar" },
               { label:"ResearchGate", icon:"researchgate",url:"https://researchgate.net/profile/Abrar-Zahin-7",            handle:"Abrar-Zahin-7" },
-              { label:"LeetCode",     icon:"leetcode",    url:"https://leetcode.com/u/AbrarHossainZahin/",                            handle:"@MdZahin" },
+              { label:"LeetCode",     icon:"leetcode",    url:"https://leetcode.com/u/AbrarHossainZahin/",                 handle:"@AbrarHossainZahin" },
               { label:"CodeForces",   icon:"codeforces",  url:"https://codeforces.com/profile/MD.Zahin",                   handle:"MD.Zahin" },
               { label:"YouTube",      icon:"youtube",     url:"https://youtube.com/@Abrar_Hossain_Zahin",                  handle:"@Abrar_Hossain_Zahin" },
+              { label:"ORCID",        icon:"orcid",       url:"https://orcid.org/my-orcid?orcid=0009-0001-5246-7759",      handle:"0009-0001-5246-7759" },
             ]).map((link, i) => (
               <SocialCard key={link.label} link={link} index={i} />
             ))}

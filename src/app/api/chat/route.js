@@ -26,6 +26,7 @@ Here is everything you know about Zahin:
 - LeetCode: leetcode.com/u/AbrarHossainZahin/
 - CodeForces: codeforces.com/profile/MD.Zahin
 - YouTube: youtube.com/@Abrar_Hossain_Zahin
+- ORCID: orcid.org/my-orcid?orcid=0009-0001-5246-7759
 
 ## Skills
 - AI/ML: Python, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV, HuggingFace (expert level)

@@ -45,6 +45,7 @@ const jsonLd = {
     "https://leetcode.com/u/AbrarHossainZahin/",
     "https://codeforces.com/profile/MD.Zahin",
     "https://youtube.com/@Abrar_Hossain_Zahin",
+    "https://orcid.org/my-orcid?orcid=0009-0001-5246-7759",
   ],
   knowsAbout: [
     "Machine Learning", "Deep Learning", "Computer Vision",

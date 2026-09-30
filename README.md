@@ -266,6 +266,7 @@ npm run dev
 | ⚔️ LeetCode | [leetcode.com/u/AbrarHossainZahin](https://leetcode.com/u/AbrarHossainZahin/) |
 | 💻 CodeForces | [codeforces.com/profile/MD.Zahin](https://codeforces.com/profile/MD.Zahin) |
 | 🎥 YouTube | [youtube.com/@Abrar_Hossain_Zahin](https://youtube.com/@Abrar_Hossain_Zahin) |
+|    ORCID | [orcid.org/0009-0001-5246-7759](https://orcid.org/my-orcid?orcid=0009-0001-5246-7759) |
 
 </div>
 
