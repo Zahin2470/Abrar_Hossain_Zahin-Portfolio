@@ -36,7 +36,7 @@
 
 ## ✦ About This Portfolio
 
-A **premium, production-grade personal portfolio** built from scratch with Next.js 14, Tailwind CSS, and Framer Motion. Goes far beyond a standard portfolio — featuring a **live star canvas with spider-web cursor**, **dark/light mode with day sky and sun**, **lightning bolts**, **live GitHub stats dashboard**, **Kaggle live badge**, **interactive skill radar chart**, **4 free AI-powered tools** (chatbot, paper summarizer, research idea generator, resume builder), and much more.
+A **premium, production-grade personal portfolio** built from scratch with Next.js 14, Tailwind CSS, and Framer Motion. Goes far beyond a standard portfolio — featuring a **live star canvas with spider-web cursor**, **dark/light mode with day sky and sun**, **lightning bolts**, **live GitHub stats dashboard**, **Kaggle live badge**, **interactive skill radar chart**, **three AI-powered tools** (chatbot, paper summarizer, research idea generator), a resume builder, and much more.
 
 > *"Turning data into intelligence, one model at a time."*
 
@@ -67,7 +67,7 @@ A **premium, production-grade personal portfolio** built from scratch with Next.
 | 👤 **About** | `/about` | Bio cards, education timeline, interactive skill radar chart, live GitHub dashboard, Kaggle badge, social profiles grid |
 | 🚀 **Projects** | `/projects` | 3D tilt cards with gradient banners, tag filter, GitHub links |
 | 🔬 **Research** | `/research` | Expandable paper cards, tag filters, Google Scholar CTA |
-| 🤖 **AI Chatbot** | `/chat` | Groq-powered AI that knows everything about Zahin's work |
+| 🤖 **AI Chatbot** | `/chat` | Multi-provider AI that knows everything about Zahin's work |
 | 📄 **Paper Summarizer** | `/paper-summarizer` | Paste any abstract → plain-English breakdown with key terms |
 | 💡 **Research Ideas** | `/research-ideas` | Enter any topic → 5 novel research directions with methodology |
 | 📋 **Resume Builder** | `/resume-builder` | 3 templates, 5 colour themes, live preview, one-click PDF export |
@@ -75,9 +75,19 @@ A **premium, production-grade personal portfolio** built from scratch with Next.
 
 ---
 
-## ✦ AI-Powered Tools (All Free · No Account Needed)
+## ✦ AI-Powered Tools
 
-All tools run on **Groq API (free tier)** with **Llama 3.3 70B** — no credit card, no signup required.
+All three AI tools use a server-side failover chain across up to **three Groq API keys**. Unconfigured keys are skipped; quota errors and provider outages move the request to the next configured account.
+
+For local development, add the API keys you want to use to `.env.local`. For the deployed site, add them in the Vercel project's Environment Variables settings and redeploy. Keep API keys private; never commit them.
+
+| Environment variable | Provider | Default model |
+|---|---|---|
+| `Zahin_API_KEY` | Groq account 1 | `openai/gpt-oss-120b` |
+| `GROQ_API_KEY_2` | Groq account 2 | `openai/gpt-oss-120b` |
+| `GROQ_API_KEY_3` | Groq account 3 | `openai/gpt-oss-120b` |
+
+All three keys use the same model, which can be overridden with `GROQ_MODEL`. Each Groq account has its own quota and terms; check Groq's current limits before relying on multiple accounts. Requests go to the first configured key that responds successfully, then try the next key on provider errors. Keep API keys private; never commit them.
 
 ### 🤖 AI Chatbot (`/chat`)
 Knows everything about Zahin — research papers, projects, skills, background. Visitors can ask anything and get instant, accurate answers.
@@ -123,7 +133,7 @@ Frontend        Next.js 14 (App Router) · React 18
 Styling         Tailwind CSS · Custom CSS Variables
 Animation       Framer Motion · Canvas API
 Visual FX       Gold star canvas · Spider-web cursor · Lightning · Sun rays
-AI              Groq API (Llama 3.3 70B) — free tier
+AI              Groq API (up to three-key server-side failover)
 Live Data       GitHub public API · Kaggle REST API · countapi.xyz
 Deployment      Vercel (zero-config, auto-deploy)
 Fonts           Syne (display) · Inter (body)

@@ -273,7 +273,7 @@ export const researchPapers = [
     iconGradient: "from-violet-500 to-fuchsia-500",
     title: "SADAP: Optimizing Hybrid Padding Strategies in Post-Quantum TLS to Mitigate Handshake Fingerprinting and Addressing Privacy-Bandwidth Trade-offs",
     focus: "Post-Quantum Cryptography, TLS Security, Fingerprinting Resistance",
-    tags: ["Cryptography", "Security", "Post-Quantum", "Padding"],
+    tags: ["Post Quantum Cryptography", "Security"],
     url: null,
   },
   {
@@ -293,7 +293,7 @@ export const researchPapers = [
     iconGradient: "from-emerald-500 to-teal-500",
     title: "GreenNet: Design-Time Compactness Outperforms Post-Hoc Compression for Sustainable Edge AI with Comprehensive Multicriteria Evaluation",
     focus: "Green AI, Knowledge Distillation, Edge Computing, Pruning",
-    tags: ["Green AI", "CNN", "Edge AI", "Knowledge Distillation", "Pruning"],
+    tags: ["Green AI", "Edge AI", "CNN", "Knowledge Distillation", "Pruning"],
     url: null,
   },
   {
@@ -303,7 +303,7 @@ export const researchPapers = [
     iconGradient: "from-blue-500 to-cyan-500",
     title: "TumorXAI: Self-Supervised Deep Learning Framework for Explainable Brain MRI Tumor Classification",
     focus: "Medical Imaging, XAI, Self-Supervised Learning",
-    tags: ["Medical AI", "XAI", "Deep Learning", "MRI"],
+    tags: ["XAI", "MRI"],
     url: "https://arxiv.org/abs/2605.01999",
   },
   {
@@ -323,7 +323,7 @@ export const researchPapers = [
     iconGradient: "from-amber-500 to-yellow-500",
     title: "SentiVec: Sentiment-Aware Vector-Based Review Retrieval System with Four-Way Cross-Dataset Validation",
     focus: "NLP, Sentiment Analysis, Vector Retrieval",
-    tags: ["NLP", "Sentiment Analysis", "Vector Retrieval", "IR"],
+    tags: ["NLP", "Sentiment Analysis", "Vector Retrieval"],
     url: null,
   },  
   {
@@ -333,7 +333,7 @@ export const researchPapers = [
     iconGradient: "from-cyan-500 to-blue-500",
     title: "Speech-Based Mental Health Disorder Detection Using Low-Rank Adaptation of Pretrained Speech Transformers",
     focus: "LoRA, Mental Health, Transformers",
-    tags: ["Speech Processing", "Mental Health", "Transformers", "Low-Rank Adaptation"],
+    tags: ["Speech Processing", "Transformers", "Low-Rank Adaptation"],
     url: null,
   },
   {
@@ -343,7 +343,7 @@ export const researchPapers = [
     iconGradient: "from-indigo-500 to-purple-500",
     title: "Federated Learning for Magnetic Resonance Imaging: A Systematic Review of Privacy Assurance, Cross-Site Generalization, and Clinical Readiness",
     focus: "Federated Learning, MRI, Privacy, Clinical AI",
-    tags: ["Federated Learning", "MRI", "Privacy", "Clinical AI"],
+    tags: ["Federated Learning", "MRI"],
     url: null,
   },
   {
@@ -353,7 +353,7 @@ export const researchPapers = [
     iconGradient: "from-rose-500 to-orange-500",
     title: "GastroVisionNet: An Attention-Based CNN for Gastric Cancer Classification with XAI",
     focus: "Medical AI, Attention Mechanism, Explainable AI",
-    tags: ["Medical AI", "Attention", "XAI", "Cancer Detection"],
+    tags: ["Attention", "XAI", "Cancer Detection"],
     url: null,
   },
   {
@@ -363,7 +363,7 @@ export const researchPapers = [
     iconGradient: "from-emerald-500 to-teal-500",
     title: "Explainable Spatial AI Framework for Targeted Groundwater Arsenic Testing in Bangladesh",
     focus: "Spatial AI, XAI, Groundwater Arsenic Testing",
-    tags: ["Spatial AI", "XAI", "Groundwater Arsenic Testing", "Bangladesh"],
+    tags: ["XAI", "Groundwater Arsenic", "Spatial AI"],
     url: null,
   }
 ];

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
+import { AiProvidersUnavailableError, generateAiCompletion } from "@/lib/ai";
 
-// Using API — 100% FREE, no credit card needed
-// Sign up at: https://console.anthropic.com → API Keys → Create Key
-// Add Zahin_API_KEY to your Vercel environment variables
+export const maxDuration = 60;
 
 const SYSTEM_PROMPT = `You are the AI assistant embedded in Abrar Hossain Zahin's personal portfolio. Your job is to help visitors — recruiters, researchers, collaborators, and students — learn about Zahin in a helpful, friendly, and professional way.
 
@@ -71,56 +70,34 @@ Medical AI, Explainable AI (XAI), Green AI, Computer Vision, NLP, Post-Quantum C
 
 export async function POST(request) {
   try {
-    const apiKey = process.env.Zahin_API_KEY;
-
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "API key not configured. Please add Zahin_API_KEY to your Vercel environment variables. Get a free key at console.anthropic.com" },
-        { status: 500 }
-      );
-    }
-
     const { messages } = await request.json();
 
-    if (!messages || !Array.isArray(messages)) {
+    if (
+      !Array.isArray(messages) ||
+      messages.some(
+        (message) =>
+          !message ||
+          !["user", "assistant"].includes(message.role) ||
+          typeof message.content !== "string"
+      )
+    ) {
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
 
-    // OpenAI-compatible format — system prompt goes in messages array
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile", // Free, fast, very capable
-        max_tokens: 600,
-        temperature: 0.7,
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          ...messages.map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
-        ],
-      }),
+    const text = await generateAiCompletion({
+      maxTokens: 600,
+      temperature: 0.7,
+      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      console.error("LLM API error:", err);
+    return NextResponse.json({ reply: text });
+  } catch (error) {
+    if (error instanceof AiProvidersUnavailableError) {
       return NextResponse.json(
-        { error: "AI service error. Please try again." },
-        { status: response.status }
+        { error: "AI service is temporarily unavailable. Check provider API keys and quota, then try again." },
+        { status: 503 }
       );
     }
 
-    const data = await response.json();
-    const text = data.choices?.[0]?.message?.content ?? "Sorry, I couldn't generate a response.";
-
-    return NextResponse.json({ reply: text });
-  } catch (error) {
     console.error("Chat API route error:", error);
     return NextResponse.json(
       { error: "Server error. Please try again." },
